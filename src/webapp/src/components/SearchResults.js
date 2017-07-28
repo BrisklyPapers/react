@@ -1,12 +1,48 @@
-import React from 'react'
-import SearchResult from './SearchResult';
+import React, { Component } from 'react'
+import SearchResult from './SearchResult'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
-const SearchResults = () => {
-    return (
-        <div>
-            <SearchResult title="test" url="http://test.de" description="Ich bin <em>ein Test</em>"/>
-        </div>
-    )
+class SearchResults extends Component {
+
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        const { documents } = this.props
+
+        return (
+            <div>
+                {documents.map(document => (
+                    <SearchResult title={document.fileName} url={document.url} description={document.text.join()} />
+                ))}
+            </div>
+        )
+    }
+}
+
+SearchResults.propTypes = {
+    documents: PropTypes.arrayOf(
+        PropTypes.shape({
+            fileName: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
+            text: PropTypes.arrayOf(
+                PropTypes.string
+            ).isRequired,
+            tags: PropTypes.arrayOf(
+                PropTypes.string
+            ).isRequired
+        }).isRequired
+    ).isRequired
 };
 
-export default SearchResults
+const mapStateToProps = state => {
+    return {
+        documents: state.searchResults.documents
+    }
+}
+
+export default connect(
+    mapStateToProps
+)(SearchResults)

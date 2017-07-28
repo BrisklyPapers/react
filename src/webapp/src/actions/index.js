@@ -18,10 +18,9 @@ export function searchDocuments(text) {
 
 export const RECEIVE_DOCUMENTS = 'RECEIVE_DOCUMENTS';
 function receiveDocuments(json) {
-    console.log(json.data);
     return {
         type: RECEIVE_DOCUMENTS,
-        documents: [], //json.data.children.map(child => child.data),
+        documents: json.map ? json : [],
         receivedAt: Date.now()
     }
 }
