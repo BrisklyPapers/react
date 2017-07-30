@@ -33,12 +33,12 @@ class Search extends Component {
 Search.propTypes = {
     searchedText: PropTypes.string.isRequired,
     documents: PropTypes.array.isRequired,
-    isFetching: PropTypes.bool.isRequired,
+    isFetching: PropTypes.bool,
     lastUpdated: PropTypes.number,
     dispatch: PropTypes.func.isRequired
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
     const {searchedText, searchResults} = state
     const {
         isFetching,

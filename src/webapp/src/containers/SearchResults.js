@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
-import SearchResult from './SearchResult'
+import SearchResult from '../components/SearchResult'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 class SearchResults extends Component {
-
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         const { documents } = this.props
@@ -37,7 +33,7 @@ SearchResults.propTypes = {
     ).isRequired
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         documents: state.searchResults.documents
     }

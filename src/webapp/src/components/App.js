@@ -1,6 +1,6 @@
 import React from 'react'
 import Search from '../containers/Search'
-import SearchResults from './SearchResults'
+import SearchResults from '../containers/SearchResults'
 
 const App = () => (
     <div>
