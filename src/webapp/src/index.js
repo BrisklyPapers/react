@@ -8,7 +8,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import { createStore, applyMiddleware, compose } from 'redux';
-import { searchInputKeyPressed, fetchDocuments } from './actions'
 import rootReducer from './reducers';
 import App from './components/App';
 
@@ -32,11 +31,6 @@ let store = createStore(
     ))
 );
 /* eslint-enable */
-
-//store.dispatch(searchInputKeyPressed('sebastian'))
-//store
-//    .dispatch(fetchDocuments(store.searchedText))
-//    .then(() => console.log(store.getState()))
 
 render(
     <MuiThemeProvider>
