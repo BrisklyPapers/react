@@ -1,14 +1,5 @@
 import {SEARCH_INPUT_KEY_PRESSED, SEARCH_DOCUMENTS, RECEIVE_DOCUMENTS, RECEIVE_DOCUMENTS_ERROR} from '../actions'
 
-export const searchedText = (state = '', action) => {
-    switch (action.type) {
-        case SEARCH_INPUT_KEY_PRESSED:
-            return action.text
-        default:
-            return state
-    }
-}
-
 export const searchResults = (state = {isFetching: false, didInvalidate: false, documents: []}, action) => {
     switch (action.type) {
         case SEARCH_INPUT_KEY_PRESSED:
