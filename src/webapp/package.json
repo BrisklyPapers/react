@@ -21,7 +21,9 @@
     "expect": "^1.20.2",
     "expect-jsx": "^3.0.0",
     "mocha": "^3.2.0",
-    "react-addons-test-utils": "^15.4.1"
+    "react-test-renderer": "^15.6.1",
+    "sinon": "^2.4.1",
+    "mocha-sinon": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
