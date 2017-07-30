@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const SearchResult = ({title, url, description}) => {
     return (
@@ -17,4 +17,4 @@ SearchResult.propTypes = {
     description: PropTypes.string.isRequired
 };
 
-export default SearchResult
+export default SearchResult;

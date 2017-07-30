@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch';
 
 export const SEARCH_INPUT_KEY_PRESSED = 'SEARCH_INPUT_KEY_PRESSED';
 export const searchInputKeyPressed = (text) => {
@@ -6,7 +6,7 @@ export const searchInputKeyPressed = (text) => {
         type: SEARCH_INPUT_KEY_PRESSED,
         text
     }
-}
+};
 
 export const SEARCH_DOCUMENTS = 'SEARCH_DOCUMENTS';
 export const searchDocuments = (text) => {
@@ -14,7 +14,7 @@ export const searchDocuments = (text) => {
         type: SEARCH_DOCUMENTS,
         text
     }
-}
+};
 
 export const RECEIVE_DOCUMENTS = 'RECEIVE_DOCUMENTS';
 const receiveDocuments = (json) => {
@@ -23,7 +23,7 @@ const receiveDocuments = (json) => {
         documents: json.map ? json : [],
         receivedAt: Date.now()
     }
-}
+};
 
 export const RECEIVE_DOCUMENTS_ERROR = 'RECEIVE_DOCUMENTS_ERROR';
 const receiveDocumentsError = () => {
@@ -32,7 +32,7 @@ const receiveDocumentsError = () => {
         documents: [],
         receivedAt: Date.now()
     }
-}
+};
 
 export const fetchDocuments = (text) => {
 
@@ -49,7 +49,7 @@ export const fetchDocuments = (text) => {
                 dispatch(receiveDocuments(json))
             )
     }
-}
+};
 
 export const fetchDocumentsIfNeeded = (text) => {
 
@@ -60,4 +60,4 @@ export const fetchDocumentsIfNeeded = (text) => {
             return Promise.resolve()
         }
     }
-}
+};

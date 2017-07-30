@@ -1,6 +1,6 @@
-import React from 'react'
-import Search from '../containers/Search'
-import SearchResults from '../containers/SearchResults'
+import React from 'react';
+import Search from '../containers/Search';
+import SearchResults from '../containers/SearchResults';
 
 const App = () => (
     <div>
@@ -9,4 +9,4 @@ const App = () => (
     </div>
 );
 
-export default App
+export default App;

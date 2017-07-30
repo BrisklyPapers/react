@@ -5,8 +5,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import thunkMiddleware from 'redux-thunk'
-import { createLogger } from 'redux-logger'
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './reducers';
 import App from './components/App';

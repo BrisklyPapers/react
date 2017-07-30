@@ -1,5 +1,5 @@
-import SearchResultsComponent from '../components/SearchResults'
-import { connect } from 'react-redux'
+import SearchResultsComponent from '../components/SearchResults';
+import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
     return {

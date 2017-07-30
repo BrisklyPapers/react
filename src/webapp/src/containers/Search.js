@@ -1,6 +1,6 @@
-import { connect } from 'react-redux'
-import { searchInputKeyPressed, fetchDocumentsIfNeeded } from '../actions'
-import SearchComponent from '../components/Search'
+import { connect } from 'react-redux';
+import { searchInputKeyPressed, fetchDocumentsIfNeeded } from '../actions';
+import SearchComponent from '../components/Search';
 
 const mapStateToProps = (state) => {
     return {

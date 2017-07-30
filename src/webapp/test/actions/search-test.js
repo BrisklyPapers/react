@@ -1,6 +1,7 @@
 import {
     searchInputKeyPressed, SEARCH_INPUT_KEY_PRESSED,
-    searchDocuments, SEARCH_DOCUMENTS} from '../../src/actions/search.js';
+    searchDocuments, SEARCH_DOCUMENTS
+} from '../../src/actions/search.js';
 
 describe('actions/searchInputKeyPressed', () => {
     it('test string given', () => {

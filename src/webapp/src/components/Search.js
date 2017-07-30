@@ -1,6 +1,6 @@
-import React from 'react'
-import TextField from 'material-ui/TextField'
-import PropTypes from 'prop-types'
+import React from 'react';
+import TextField from 'material-ui/TextField';
+import PropTypes from 'prop-types';
 
 const Search = ({searchedText, triggerSearch}) => {
     return (
@@ -17,4 +17,4 @@ Search.propTypes = {
     triggerSearch: PropTypes.func.isRequired
 };
 
-export default Search
+export default Search;
