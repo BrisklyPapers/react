@@ -17,8 +17,6 @@ injectTapEventPlugin();
 
 const loggerMiddleware = createLogger();
 
-let preloadedState = {searchResults: {documents: []}};
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 /* eslint-disable no-underscore-dangle */

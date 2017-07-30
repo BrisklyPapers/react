@@ -22,6 +22,8 @@
     "expect-jsx": "^3.0.0",
     "mocha": "^3.2.0",
     "react-test-renderer": "^15.6.1",
+    "redux-mock-store": "^1.2.3",
+    "enzyme": "^2.9.1",
     "sinon": "^2.4.1",
     "mocha-sinon": "^2.0.0"
   },
