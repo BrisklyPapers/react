@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => {
         triggerSearch: (event) => {
             dispatch(searchInputKeyPressed(event.target.value));
             dispatch(fetchDocumentsIfNeeded(event.target.value));
-        },
+        }
     };
 };
 const Search = connect(
