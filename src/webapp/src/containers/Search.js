@@ -33,7 +33,7 @@ class Search extends Component {
 Search.propTypes = {
     searchedText: PropTypes.string.isRequired,
     documents: PropTypes.array.isRequired,
-    isFetching: PropTypes.bool,
+    isFetching: PropTypes.bool.isRequired,
     lastUpdated: PropTypes.number,
     dispatch: PropTypes.func.isRequired
 }

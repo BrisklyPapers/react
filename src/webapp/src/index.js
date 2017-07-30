@@ -24,7 +24,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 /* eslint-disable no-underscore-dangle */
 let store = createStore(
     rootReducer,
-    preloadedState,
+    undefined,
     composeEnhancers(applyMiddleware(
         thunkMiddleware, // lets us dispatch() functions
         loggerMiddleware // neat middleware that logs actions
