@@ -16,6 +16,7 @@ const mapDispatchToProps = (dispatch) => {
         }
     };
 };
+
 const Search = connect(
     mapStateToProps,
     mapDispatchToProps
