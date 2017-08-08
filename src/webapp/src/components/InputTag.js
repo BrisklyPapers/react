@@ -2,14 +2,13 @@ import React from 'react';
 import Radium from 'radium';
 import Chip from 'material-ui/Chip';
 import TextField from 'material-ui/TextField';
+import PropTypes from 'prop-types';
 
 class InputTag extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            tags: [],
-            tag: "",
             count: 0
         }
     };
@@ -19,7 +18,7 @@ class InputTag extends React.Component {
             <div
                 style={styles.wrapper}
             >
-                {this.state.tags.map((tag) =>
+                {this.props.tags.map((tag) =>
                     <Chip
                         key={tag.key}
                         onRequestDelete={() => this.handleRequestDelete(tag.key)}
@@ -30,7 +29,7 @@ class InputTag extends React.Component {
                 )}
                 <TextField
                     hintText="Enter tag, press Enter"
-                    value={this.state.tag}
+                    value={this.props.tag}
                     onChange={this.onInputChange.bind(this)}
                     onKeyPress={this.onInputKeyPress.bind(this)}
                     ref={input => this.inputElement = input}
@@ -41,35 +40,36 @@ class InputTag extends React.Component {
     };
 
     handleRequestDelete = (key) => {
-        let tags = this.state.tags;
-        const tagToDelete = tags.map((tag) => tag.key).indexOf(key);
-        tags.splice(tagToDelete, 1);
-        this.setState({tags});
+        this.props.deleteTag(key);
     };
 
     onInputChange = (e) => {
-        this.setState({
-            tag: e.target.value
-        })
+        this.props.changeTag(e.target.value);
     };
 
     onInputKeyPress = (e) => {
         if (e.key === 'Enter' && '' !== e.target.value) {
-            let tags = this.state.tags;
-            tags.push({
+            this.props.addTag({
                 key: this.state.count + 1,
                 label: e.target.value
             });
+            this.props.changeTag("");
+
             this.setState({
-                tags: tags,
-                tag: '',
                 count: this.state.count + 1
             });
-
-            this.props.storeCallback(tags);
         }
     };
 }
+
+
+InputTag.propTypes = {
+    addTag: PropTypes.func.isRequired,
+    deleteTag: PropTypes.func.isRequired,
+    tags: PropTypes.array.isRequired,
+    changeTag: PropTypes.func.isRequired,
+    tag: PropTypes.string.isRequired
+};
 
 var styles = {
     base: {

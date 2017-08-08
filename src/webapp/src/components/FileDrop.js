@@ -8,7 +8,6 @@ class FileDrop extends React.Component {
         super(props);
         this.state = {
             dragState: "",
-            files: []
         }
     };
 
@@ -43,7 +42,7 @@ class FileDrop extends React.Component {
                     />
                 </div>
                 <ul>
-                    {this.state.files.map((file) =>
+                    {this.props.files.map((file) =>
                         <li key={file.name}>{file.name}</li>
                     )}
                 </ul>
@@ -87,14 +86,6 @@ class FileDrop extends React.Component {
 
         this.props.dropFiles(files);
 
-        let cFiles = this.state.files;
-        for (var i = 0; i < files.length; i++) {
-            cFiles.push(files[i]);
-        }
-        this.setState({files: cFiles});
-
-        this.props.storeCallback(cFiles);
-
         return false;
     };
 
@@ -105,7 +96,7 @@ class FileDrop extends React.Component {
 
 FileDrop.propTypes = {
     dropFiles: PropTypes.func.isRequired,
-    storeCallback: PropTypes.func
+    files: PropTypes.array.isRequired
 };
 
 var styles = {
