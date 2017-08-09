@@ -1,4 +1,4 @@
-import {FILE_DROP} from '../actions';
+import {FILE_DROP, DOCUMENTS_STORED, DOCUMENTS_NOT_STORED} from '../actions';
 
 export const droppedFiles = (state = {}, action) => {
     switch (action.type) {
@@ -12,6 +12,10 @@ export const droppedFiles = (state = {}, action) => {
                     type: action.document.type
                 }
             ];
+        case DOCUMENTS_STORED:
+            return {};
+        case DOCUMENTS_NOT_STORED:
+            return {};
         default:
             return state;
     }

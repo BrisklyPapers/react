@@ -3,6 +3,7 @@ import Radium from 'radium';
 import FileDrop from '../components/FileDrop';
 import InputTag from '../components/InputTag';
 import RaisedButton from 'material-ui/RaisedButton';
+import LinearProgress from 'material-ui/LinearProgress';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {storeDocuments, fileDropped} from '../actions';
@@ -36,12 +37,17 @@ class DropZone extends React.Component {
                     tags={this.state.tags}
                     tag={this.state.tag}
                 />
-                <RaisedButton
-                    label="Upload"
-                    primary={true}
-                    style={styles.button}
-                    onClick={this.uploadFiles}
-                />
+                {this.props.uploading &&
+                    <LinearProgress mode="indeterminate" value={this.props.completed} />
+                }
+                {!this.props.uploading &&
+                    <RaisedButton
+                        label="Upload"
+                        primary={true}
+                        style={styles.button}
+                        onClick={this.uploadFiles}
+                    />
+                }
             </div>
         );
     };
@@ -92,6 +98,7 @@ DropZone = Radium(DropZone);
 
 const mapStateToProps = (state) => {
     return {
+        uploading: state.uploading,
     };
 };
 
