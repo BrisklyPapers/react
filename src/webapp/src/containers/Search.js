@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { searchInputKeyPressed, fetchDocumentsIfNeeded } from '../actions';
+import { searchInputKeyPressed, fetchDocumentsIfNeeded, showResultPage } from '../actions';
 import SearchComponent from '../components/Search';
 
 const mapStateToProps = (state) => {
@@ -13,6 +13,9 @@ const mapDispatchToProps = (dispatch) => {
         triggerSearch: (event) => {
             dispatch(searchInputKeyPressed(event.target.value));
             dispatch(fetchDocumentsIfNeeded(event.target.value));
+        },
+        onFocus: () => {
+            dispatch(showResultPage());
         }
     };
 };

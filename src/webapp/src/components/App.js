@@ -1,13 +1,19 @@
 import React from 'react';
-import Search from '../containers/Search';
+import Navigation from '../components/Navigation';
+import ResultPage from '../containers/ResultPage';
+import FileUploadPage from '../containers/FileUploadPage';
 import SearchResults from '../containers/SearchResults';
 import DropZone from '../containers/DropZone';
 
 const App = () => (
     <div>
-        <Search />
-        <SearchResults />
-        <DropZone />
+        <Navigation />
+        <ResultPage>
+            <SearchResults />
+        </ResultPage>
+        <FileUploadPage>
+            <DropZone />
+        </FileUploadPage>
     </div>
 );
 

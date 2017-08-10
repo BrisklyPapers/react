@@ -4,6 +4,7 @@ import FileDrop from '../components/FileDrop';
 import InputTag from '../components/InputTag';
 import RaisedButton from 'material-ui/RaisedButton';
 import LinearProgress from 'material-ui/LinearProgress';
+import Snackbar from 'material-ui/Snackbar';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {storeDocuments, fileDropped} from '../actions';
@@ -26,6 +27,13 @@ class DropZone extends React.Component {
     render() {
         return (
             <div>
+                <Snackbar
+                    open={this.props.error}
+                    message={this.props.errorMessage}
+                    autoHideDuration={3000}
+                    bodyStyle={{backgroundColor: '#D32F2F'}}
+                    title="Error"
+                />
                 <FileDrop
                     dropFiles={ this.onDrop }
                     files={this.state.files}
@@ -38,16 +46,15 @@ class DropZone extends React.Component {
                     tag={this.state.tag}
                 />
                 {this.props.uploading &&
-                    <LinearProgress mode="indeterminate" value={this.props.completed} />
+                <LinearProgress mode="indeterminate" value={this.props.completed}/>
                 }
-                {!this.props.uploading &&
-                    <RaisedButton
-                        label="Upload"
-                        primary={true}
-                        style={styles.button}
-                        onClick={this.uploadFiles}
-                    />
-                }
+                <RaisedButton
+                    label="Upload"
+                    primary={true}
+                    style={styles.button}
+                    onClick={this.uploadFiles}
+                    disabled={this.props.uploading}
+                />
             </div>
         );
     };
@@ -80,8 +87,13 @@ class DropZone extends React.Component {
 
     uploadFiles = () => {
         this.props.storeDocuments(this.state.files, this.state.tags);
-        this.setState(this.getInitialState());
-    }
+    };
+
+    componentWillUpdate(nextProps, nextState) {
+        if (nextProps.uploading === false && nextProps.error === false && this.props.uploading === true) {
+            this.setState(this.getInitialState());
+        }
+    };
 }
 
 DropZone.propTypes = {
@@ -91,6 +103,9 @@ DropZone.propTypes = {
 var styles = {
     button: {
         marginTop: 12,
+    },
+    card: {
+        color: "red",
     }
 };
 
@@ -99,6 +114,8 @@ DropZone = Radium(DropZone);
 const mapStateToProps = (state) => {
     return {
         uploading: state.uploading,
+        error: state.upload_error.error,
+        errorMessage: state.upload_error.errorMessage,
     };
 };
 

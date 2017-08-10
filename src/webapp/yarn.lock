@@ -4246,6 +4246,10 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
+material-ui-error-reporting@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/material-ui-error-reporting/-/material-ui-error-reporting-2.3.0.tgz#fd6ef948d5e3979e65d8fa4ba7e9c8de3c7889f4"
+
 material-ui@^0.18.6:
   version "0.18.6"
   resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-0.18.6.tgz#29b8ef78952872c821e8599e5edd9ae276dcdaae"

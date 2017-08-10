@@ -2,19 +2,23 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import PropTypes from 'prop-types';
 
-const Search = ({searchedText, triggerSearch}) => {
-    return (
-        <TextField
-            value={searchedText}
-            onChange={triggerSearch}
-            hintText="Search here .."
-        />
-    );
-};
+class Search extends React.Component {
+    render () {
+        return (
+            <TextField
+                value={this.props.searchedText}
+                onChange={this.props.triggerSearch}
+                onFocus={this.props.onFocus}
+                hintText="Search here .."
+            />
+        );
+    }
+}
 
 Search.propTypes = {
     searchedText: PropTypes.string.isRequired,
-    triggerSearch: PropTypes.func.isRequired
+    triggerSearch: PropTypes.func.isRequired,
+    onFocus: PropTypes.func
 };
 
 export default Search;
