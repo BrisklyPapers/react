@@ -1,0 +1,10 @@
+version: '2'
+services:
+  react:
+    build: ./
+    entrypoint: sh /home/node/entrypoint.sh
+    working_dir: /home/node
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/home/node
