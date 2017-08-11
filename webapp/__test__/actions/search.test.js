@@ -11,7 +11,7 @@ describe('actions/searchInputKeyPressed', () => {
             type: SEARCH_INPUT_KEY_PRESSED,
             text: "test"
         });
-    })
+    });
 });
 
 describe('actions/searchDocuments', () => {

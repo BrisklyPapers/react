@@ -1,3 +1,4 @@
+import React from 'react';
 import {SEARCH_INPUT_KEY_PRESSED} from '../../src/actions/search.js';
 import {searchedText} from '../../src/reducers/searchedText';
 

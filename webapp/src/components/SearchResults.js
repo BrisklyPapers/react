@@ -1,14 +1,17 @@
 import React from 'react';
 import SearchResult from './SearchResult';
 import PropTypes from 'prop-types';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 const SearchResults = ({documents}) => {
     return (
-        <div>
-            {documents.map(document => (
-                <SearchResult key={document.url} title={document.fileName} url={document.url} description={document.text.join()} />
-            ))}
-        </div>
+        <MuiThemeProvider>
+            <div>
+                {documents.map(document => (
+                    <SearchResult key={document.url} title={document.fileName} url={document.url} description={document.text.join()} />
+                ))}
+            </div>
+        </MuiThemeProvider>
     );
 };
 

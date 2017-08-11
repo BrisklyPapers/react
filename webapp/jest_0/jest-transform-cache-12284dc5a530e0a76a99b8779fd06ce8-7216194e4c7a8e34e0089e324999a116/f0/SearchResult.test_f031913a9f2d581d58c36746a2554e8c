@@ -1,0 +1,21 @@
+'use strict';var _SearchResult = require('../../src/components/SearchResult.js');var _SearchResult2 = _interopRequireDefault(_SearchResult);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('components/SearchResult', function () {
+    it('works', function () {
+        var renderer = new ReactShallowRenderer();
+        renderer.render(React.createElement(_SearchResult2.default, { title: 'Foo', url: 'http://abc.de', description: 'desc' }));
+        var actualElement = renderer.getRenderOutput();
+        var expectedElement =
+        React.createElement('div', null,
+            React.createElement('a', { title: 'Foo', href: 'http://abc.de', target: '_blank' }, 'Foo'),
+            React.createElement('br', null),
+            React.createElement('div', {
+                dangerouslySetInnerHTML: {
+                    __html: 'desc' } }));
+
+
+
+
+        expect(actualElement).toEqualJSX(expectedElement);
+    });
+});
