@@ -40,7 +40,7 @@ export const fetchDocuments = (text) => {
 
         dispatch(searchDocuments(text))
 
-        return fetch(`http://localhost:8085/document/search?q=${text}`)
+        return fetch(`/ajax/document/search?q=${text}`)
             .then(
                 response => response.json(),
                 error => dispatch(receiveDocumentsError())

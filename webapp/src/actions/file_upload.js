@@ -50,12 +50,11 @@ export const storeDocuments = (files, tags) => {
             //    }, false);
             //    return xhr;
             //},
-            url: 'http://localhost:8085/document',
+            url: '/ajax/document',
             data: formData,
             type: "POST",
             contentType: false,
             processData: false,
-            crossDomain: true,
             //beforeSend: (xhr) => {
             //    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
             //},
