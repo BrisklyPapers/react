@@ -1,14 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Radium, {Style} from 'radium';
+import PropTypes from   'prop-types';
 
-const SearchResult = ({title, url, description}) => {
-    return (
-        <div>
-            <a title={title} href={url} target="_blank">{title}</a>
-            <br/>
-            <div dangerouslySetInnerHTML={{__html: description}}/>
-        </div>
-    )
+
+class SearchResult extends React.Component {
+    render () {
+        return (
+            <div>
+                <Style scopeSelector="em" rules={{backgroundColor: 'yellow'}} />
+                <a title={this.props.title} href={this.props.url} target="_blank">{this.props.title}</a>
+                <br/>
+                <div dangerouslySetInnerHTML={{__html: this.props.description}}/>
+            </div>
+        );
+    }
 };
 
 SearchResult.propTypes = {
@@ -16,5 +21,7 @@ SearchResult.propTypes = {
     url: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
 };
+
+SearchResult = Radium(SearchResult);
 
 export default SearchResult;
