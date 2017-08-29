@@ -1,7 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/SearchResult renders correctly 1`] = `
-<div>
+<div
+  data-radium={true}
+>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "em{background-color: yellow;}",
+      }
+    }
+  />
   <a
     href="http://abc.de"
     target="_blank"
