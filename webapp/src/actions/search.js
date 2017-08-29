@@ -1,5 +1,3 @@
-import fetch from 'isomorphic-fetch';
-
 export const SEARCH_INPUT_KEY_PRESSED = 'SEARCH_INPUT_KEY_PRESSED';
 export const searchInputKeyPressed = (text) => {
     return {
@@ -36,28 +34,20 @@ const receiveDocumentsError = () => {
 
 export const fetchDocuments = (text) => {
 
-    return function (dispatch) {
+    return (dispatch) => {
 
-        dispatch(searchDocuments(text))
+        dispatch(searchDocuments(text));
 
         return fetch(`/ajax/document/search?q=${text}`)
-            .then(
-                response => response.json(),
-                error => dispatch(receiveDocumentsError())
-            )
-            .then(json =>
-                dispatch(receiveDocuments(json))
-            )
+            .then(response => response.json())
+            .then(json => dispatch(receiveDocuments(json)))
+            .catch(error => dispatch(receiveDocumentsError()))
     }
 };
 
 export const fetchDocumentsIfNeeded = (text) => {
 
     return (dispatch, getState) => {
-        if (1 /* TODO enter Delay */) {
-            return dispatch(fetchDocuments(text))
-        } else {
-            return Promise.resolve()
-        }
+        return dispatch(fetchDocuments(text))
     }
 };
