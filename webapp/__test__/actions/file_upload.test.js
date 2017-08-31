@@ -107,4 +107,20 @@ describe('actions/storeDocuments', () => {
                 });
             });
     });
+
+    it('returns DOCUMENTS_NOT_STORED if ajax response is not valid json', () => {
+        myMock = fetchMock.post('/ajax/document', "invalid json");
+
+        return store.dispatch(storeDocuments([], []))
+            .then(() => {
+                expect(myMock.called('/ajax/document')).toBe(true);
+
+                const expectedActions = store.getActions();
+                expect(expectedActions).toContainEqual({
+                    type: DOCUMENTS_NOT_STORED,
+                    documents: [],
+                    receivedAt: Date.now()
+                });
+            });
+    });
 });

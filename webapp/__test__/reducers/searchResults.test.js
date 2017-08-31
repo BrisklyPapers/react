@@ -1,18 +1,19 @@
 import React from 'react';
 import {SEARCH_INPUT_KEY_PRESSED, SEARCH_DOCUMENTS, RECEIVE_DOCUMENTS, RECEIVE_DOCUMENTS_ERROR} from '../../src/actions/search.js';
 import {searchResults} from '../../src/reducers/searchResults';
+import Immutable from 'seamless-immutable';
 
 describe('reducers/searchResults SEARCH_INPUT_KEY_PRESSED', () => {
     it('key pressed', () => {
         expect(
-            searchResults({}, {type: SEARCH_INPUT_KEY_PRESSED})
+            searchResults(Immutable({}), {type: SEARCH_INPUT_KEY_PRESSED})
         ).toEqual({
             didInvalidate: true
         });
     });
     it('invalidate', () => {
         expect(
-            searchResults({didInvalidate: false}, {type: SEARCH_INPUT_KEY_PRESSED})
+            searchResults(Immutable({didInvalidate: false}), {type: SEARCH_INPUT_KEY_PRESSED})
         ).toEqual({
             didInvalidate: true
         });
@@ -22,7 +23,7 @@ describe('reducers/searchResults SEARCH_INPUT_KEY_PRESSED', () => {
 describe('reducers/searchResults SEARCH_DOCUMENTS', () => {
    it('trigger search', () => {
        expect(
-           searchResults({}, {type: SEARCH_DOCUMENTS})
+           searchResults(Immutable({}), {type: SEARCH_DOCUMENTS})
        ).toEqual({
            isFetching: true,
            didInvalidate: false
@@ -33,7 +34,7 @@ describe('reducers/searchResults SEARCH_DOCUMENTS', () => {
 describe('reducers/searchResults RECEIVE_DOCUMENTS', () => {
    it('received documents', () => {
        expect(
-           searchResults({}, {type: RECEIVE_DOCUMENTS, documents: [{a: "bc"}], receivedAt: "now"})
+           searchResults(Immutable({}), {type: RECEIVE_DOCUMENTS, documents: [{a: "bc"}], receivedAt: "now"})
        ).toEqual({
            isFetching: false,
            didInvalidate: false,
@@ -44,9 +45,9 @@ describe('reducers/searchResults RECEIVE_DOCUMENTS', () => {
 });
 
 describe('reducers/searchResults RECEIVE_DOCUMENTS_ERROR', () => {
-   it('received documents', () => {
+   it('should return received documents', () => {
        expect(
-           searchResults({}, {type: RECEIVE_DOCUMENTS_ERROR, documents: [{a: "bc"}], receivedAt: "now"})
+           searchResults(Immutable({}), {type: RECEIVE_DOCUMENTS_ERROR, documents: [{a: "bc"}], receivedAt: "now"})
        ).toEqual({
            isFetching: false,
            didInvalidate: false,
@@ -56,7 +57,7 @@ describe('reducers/searchResults RECEIVE_DOCUMENTS_ERROR', () => {
 });
 
 describe('reducers/searchResults RECEIVE_DOCUMENTS_ERROR', () => {
-   it('invalid action + default state', () => {
+   it('should return default state and handle an invalid action', () => {
        expect(
            searchResults(undefined, {type: ""})
        ).toEqual({
