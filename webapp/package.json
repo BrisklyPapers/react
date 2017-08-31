@@ -39,5 +39,9 @@
     "test:coverage": "jest --coverage",
     "eject": "react-scripts eject"
   },
+  "jest": {
+    "verbose": false,
+    "collectCoverageFrom" : ["src/**/*.{js,jsx}"]
+  },
   "false": {}
 }
