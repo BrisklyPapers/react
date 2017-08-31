@@ -51,7 +51,7 @@ describe('actions/fetchDocuments', () => {
         const mockResult = [
             {fileName: "foo.pdf", url: "http://", text: "foo", tags: []}
         ];
-        myMock = fetchMock.mock('/ajax/document/search?q=foo', mockResult);
+        myMock = fetchMock.get('/ajax/document/search?q=foo', mockResult);
 
         return store.dispatch(fetchDocumentsIfNeeded("foo"))
             .then(() => {
@@ -71,11 +71,11 @@ describe('actions/fetchDocuments', () => {
         });
     });
 
-    it('returns an invlaid response', () => {
+    it('returns an invalid response', () => {
         const mockResult = [
             {fileName: "foo.pdf", url: "http://", text: "foo", tags: []}
         ];
-        myMock = fetchMock.mock('/ajax/document/search?q=foo', 401);
+        myMock = fetchMock.get('/ajax/document/search?q=foo', 401);
 
         return store.dispatch(fetchDocumentsIfNeeded("foo"))
             .then(() => {

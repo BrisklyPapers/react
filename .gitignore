@@ -22,3 +22,4 @@ yarn-error.log*
 
 .idea
 /webapp/jest_0/
+/webapp/coverage/

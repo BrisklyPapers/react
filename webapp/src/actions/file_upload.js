@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 export const FILE_DROP = 'FILE_DROP';
 export const fileDropped = (document) => {
     return {
@@ -20,11 +18,10 @@ export const storeDocuments = (files, tags) => {
     return function (dispatch) {
         var formData = new FormData();
 
-        $.each(files, function (i, file) {
+        files.forEach((file) => {
             formData.append('files[]', file);
         });
-
-        $.each(tags, function (i, tag) {
+        tags.forEach((tag, i) => {
             formData.append("tags[" + tag.key + "]", tag.label);
         });
 
@@ -32,39 +29,13 @@ export const storeDocuments = (files, tags) => {
 
         dispatch(fileStartUpload());
 
-        return $.ajax({
-            //xhr: function()
-            //{
-            //    var xhr = new window.XMLHttpRequest();
-            //    //Upload progress
-            //    xhr.upload.addEventListener("progress", function(evt){
-            //        if (evt.lengthComputable) {
-            //            dispatch(fileUploadProgress(evt.loaded / evt.total));
-            //        }
-            //    }, false);
-            //    //Download progress
-            //    xhr.addEventListener("progress", function(evt){
-            //        if (evt.lengthComputable) {
-            //            dispatch(fileDownloadProgress(evt.loaded / evt.total));
-            //        }
-            //    }, false);
-            //    return xhr;
-            //},
-            url: '/ajax/document',
-            data: formData,
-            type: "POST",
-            contentType: false,
-            processData: false,
-            //beforeSend: (xhr) => {
-            //    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-            //},
-            success: function (jqXHR, textStatus) {
-                dispatch(documentsStored({}));
-            },
-            error: function (jqXHR, textStatus) {
-                dispatch(documentsNotStored(textStatus));
-            }
-        });
+        return fetch('/ajax/document', {
+            method: "POST",
+            body: formData
+        })
+            .then(response => response.json())
+            .then(json => dispatch(documentsStored(json)))
+            .catch(error => dispatch(documentsNotStored()));
     }
 };
 
@@ -78,11 +49,10 @@ const documentsStored = (json) => {
 };
 
 export const DOCUMENTS_NOT_STORED = 'DOCUMENTS_NOT_STORED';
-const documentsNotStored = (textStatus) => {
+const documentsNotStored = () => {
     return {
         type: DOCUMENTS_NOT_STORED,
         documents: [],
-        receivedAt: Date.now(),
-        textStatus
+        receivedAt: Date.now()
     }
 };
