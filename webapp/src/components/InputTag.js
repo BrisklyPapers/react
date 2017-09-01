@@ -28,6 +28,7 @@ class InputTag extends React.Component {
                     </Chip>
                 )}
                 <TextField
+                    id="search"
                     hintText="Enter tag, press Enter"
                     value={this.props.tag}
                     onChange={this.onInputChange.bind(this)}

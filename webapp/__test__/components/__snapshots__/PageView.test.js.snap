@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/PageView renders correctly 1`] = `
+<div>
+  <span>
+    Child
+  </span>
+</div>
+`;

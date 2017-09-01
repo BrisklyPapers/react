@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/FileDrop renders correctly 1`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    onClick={[Function]}
+    onDragEnd={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "1px dashed #ccc",
+        "minHeight": "100px",
+        "padding": "10px",
+      }
+    }
+  >
+    Drop files here or click to 
+    <span
+      id="browse"
+    >
+      browse
+    </span>
+    .
+    <input
+      data-radium={true}
+      id="fileBox"
+      multiple={true}
+      name="files[]"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+  </div>
+  <ul
+    data-radium={true}
+  />
+</div>
+`;
