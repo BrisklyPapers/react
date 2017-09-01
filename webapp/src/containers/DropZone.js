@@ -16,7 +16,7 @@ class DropZone extends React.Component {
         this.state = this.getInitialState()
     };
 
-    getInitialState = () => {
+    getInitialState() {
         return {
             tag: "",
             tags: [],
@@ -59,7 +59,7 @@ class DropZone extends React.Component {
         );
     };
 
-    onDrop = (files) => {
+    onDrop(files) {
         let cFiles = this.state.files;
         for (var i = 0; i < files.length; i++) {
             cFiles.push(files[i]);
@@ -68,24 +68,24 @@ class DropZone extends React.Component {
         this.props.dropFiles(files);
     };
 
-    addTag = (tag) => {
+    addTag(tag) {
         let tags = this.state.tags;
         tags.push(tag);
         this.setState({tags: tags});
     };
 
-    deleteTag = (key) => {
+    deleteTag(key) {
         let tags = this.state.tags;
         const tagToDelete = tags.map((tag) => tag.key).indexOf(key);
         tags.splice(tagToDelete, 1);
         this.setState({tags: tags});
     };
 
-    changeTag = (value) => {
+    changeTag(value) {
         this.setState({tag: value});
     };
 
-    uploadFiles = () => {
+    uploadFiles() {
         this.props.storeDocuments(this.state.files, this.state.tags);
     };
 

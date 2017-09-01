@@ -39,15 +39,15 @@ class InputTag extends React.Component {
         );
     };
 
-    handleRequestDelete = (key) => {
+    handleRequestDelete(key) {
         this.props.deleteTag(key);
     };
 
-    onInputChange = (e) => {
+    onInputChange(e) {
         this.props.changeTag(e.target.value);
     };
 
-    onInputKeyPress = (e) => {
+    onInputKeyPress(e) {
         if (e.key === 'Enter' && '' !== e.target.value) {
             this.props.addTag({
                 key: this.state.count + 1,

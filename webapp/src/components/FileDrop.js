@@ -50,26 +50,26 @@ class FileDrop extends React.Component {
         );
     };
 
-    cancelEvent = (e) => {
+    cancelEvent(e) {
         e = e || window.event; // get window.event if e argument missing (in IE)
         if (e.preventDefault) {
             e.preventDefault();
         }
     };
 
-    dragOver = (e) => {
+    dragOver(e) {
         this.cancelEvent(e);
         this.setState({dragState: "hover"});
         return false;
     };
 
-    dragLeave = (e) => {
+    dragLeave(e) {
         this.cancelEvent(e);
         this.setState({dragState: ""});
         return false;
     };
 
-    onDrop = (e) => {
+    onDrop(e) {
         this.dragLeave(e);
 
         let files = [];
@@ -89,7 +89,7 @@ class FileDrop extends React.Component {
         return false;
     };
 
-    onClick = (e) => {
+    onClick(e) {
         this.inputElement.click();
     };
 }
