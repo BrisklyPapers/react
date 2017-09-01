@@ -1,6 +1,7 @@
 # Briskly Papers
 
 [![Build Status](https://travis-ci.org/BrisklyPapers/react.svg?branch=master)](https://travis-ci.org/BrisklyPapers/react)
+[![Coverage Status](https://coveralls.io/repos/github/BrisklyPapers/react/badge.svg?branch=implement-coveralls)](https://coveralls.io/github/BrisklyPapers/react?branch=implement-coveralls)
 
 ## About Briskly Papers
 A fast and simple document store. Its goal is to provide a simple way to store and find all your documents.
