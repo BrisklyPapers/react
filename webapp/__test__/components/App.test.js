@@ -1,22 +1,19 @@
 import React from 'react';
 import App from '../../src/components/App.js';
-import renderer from 'react-test-renderer';
+const ReactShallowRenderer = require('react-test-renderer/shallow');
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Provider } from 'react-redux';
 import fetchMock from 'fetch-mock'
 import configureMockStore from 'redux-mock-store'
 
 const mockStore = configureMockStore();
+const renderer = new ReactShallowRenderer();
 
 describe('components/App', () => {
     it('renders correctly', () => {
-        const app = renderer.create(
-            <MuiThemeProvider>
-                <Provider store={mockStore({searchedText: ""})}>
-                    <App />
-                </Provider>
-            </MuiThemeProvider>
+        const app = renderer.render(
+            <App />
         );
-        expect(app.toJSON()).toMatchSnapshot();
+        expect(renderer.getRenderOutput()).toMatchSnapshot();
     });
 });
