@@ -1,7 +1,7 @@
 # Briskly Papers
 
 [![Build Status](https://travis-ci.org/BrisklyPapers/react.svg?branch=master)](https://travis-ci.org/BrisklyPapers/react)
-[![Coverage Status](https://coveralls.io/repos/github/BrisklyPapers/react/badge.svg?branch=implement-coveralls)](https://coveralls.io/github/BrisklyPapers/react?branch=implement-coveralls)
+[![Coverage Status](https://coveralls.io/repos/github/BrisklyPapers/react/badge.svg?branch=master)](https://coveralls.io/github/BrisklyPapers/react?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/brisklypapers/react/badge.svg?targetFile=webapp%2Fpackage.json)](https://snyk.io/test/github/brisklypapers/react?targetFile=webapp%2Fpackage.json)
 
 ## About Briskly Papers
