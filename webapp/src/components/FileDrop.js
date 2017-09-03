@@ -9,12 +9,19 @@ class FileDrop extends React.Component {
         this.state = {
             dragState: "",
         }
+
+        this.cancelEvent = this.cancelEvent.bind(this);
+        this.dragOver = this.dragOver.bind(this);
+        this.dragLeave = this.dragLeave.bind(this);
+        this.onDrop = this.onDrop.bind(this);
+        this.onClick = this.onClick.bind(this);
     };
 
     render() {
         return (
             <div>
                 <div
+                    id="fileDrop"
                     onDragOver={ this.dragOver }
                     onDragEnd={ this.dragLeave }
                     onDragLeave={ this.dragLeave }
@@ -71,7 +78,6 @@ class FileDrop extends React.Component {
 
     onDrop(e) {
         this.dragLeave(e);
-
         let files = [];
         if (e.dataTransfer) {
             const dt = e.dataTransfer;
@@ -80,7 +86,7 @@ class FileDrop extends React.Component {
             } else if (dt.items && dt.items.length) {
                 files = dt.items
             }
-        }  else if (e.target && e.target.files) {
+        } else if (e.target && e.target.files) {
             files = e.target.files
         }
 

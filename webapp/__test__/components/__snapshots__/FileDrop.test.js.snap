@@ -1,11 +1,489 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/FileDrop renders correctly 1`] = `
+exports[`components/FileDrop should add and return dropped files 1`] = `
 <div
   data-radium={true}
 >
   <div
     data-radium={true}
+    id="fileDrop"
+    onClick={[Function]}
+    onDragEnd={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "1px dashed #ccc",
+        "minHeight": "100px",
+        "padding": "10px",
+      }
+    }
+  >
+    Drop files here or click to 
+    <span
+      id="browse"
+    >
+      browse
+    </span>
+    .
+    <input
+      data-radium={true}
+      id="fileBox"
+      multiple={true}
+      name="files[]"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+  </div>
+  <ul
+    data-radium={true}
+  />
+</div>
+`;
+
+exports[`components/FileDrop should add and return dropped files if files are added by file input 1`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    id="fileDrop"
+    onClick={[Function]}
+    onDragEnd={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "1px dashed #ccc",
+        "minHeight": "100px",
+        "padding": "10px",
+      }
+    }
+  >
+    Drop files here or click to 
+    <span
+      id="browse"
+    >
+      browse
+    </span>
+    .
+    <input
+      data-radium={true}
+      id="fileBox"
+      multiple={true}
+      name="files[]"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+  </div>
+  <ul
+    data-radium={true}
+  />
+</div>
+`;
+
+exports[`components/FileDrop should add and return dropped files if files are items 1`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    id="fileDrop"
+    onClick={[Function]}
+    onDragEnd={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "1px dashed #ccc",
+        "minHeight": "100px",
+        "padding": "10px",
+      }
+    }
+  >
+    Drop files here or click to 
+    <span
+      id="browse"
+    >
+      browse
+    </span>
+    .
+    <input
+      data-radium={true}
+      id="fileBox"
+      multiple={true}
+      name="files[]"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+  </div>
+  <ul
+    data-radium={true}
+  />
+</div>
+`;
+
+exports[`components/FileDrop should change style onDragOver and onDragEnd 1`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    id="fileDrop"
+    onClick={[Function]}
+    onDragEnd={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "1px dashed #ccc",
+        "minHeight": "100px",
+        "padding": "10px",
+      }
+    }
+  >
+    Drop files here or click to 
+    <span
+      id="browse"
+    >
+      browse
+    </span>
+    .
+    <input
+      data-radium={true}
+      id="fileBox"
+      multiple={true}
+      name="files[]"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+  </div>
+  <ul
+    data-radium={true}
+  />
+</div>
+`;
+
+exports[`components/FileDrop should change style onDragOver and onDragEnd 2`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    id="fileDrop"
+    onClick={[Function]}
+    onDragEnd={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "2px dashed rgb(0, 188, 212)",
+        "minHeight": "100px",
+        "padding": "10px",
+      }
+    }
+  >
+    Drop files here or click to 
+    <span
+      id="browse"
+    >
+      browse
+    </span>
+    .
+    <input
+      data-radium={true}
+      id="fileBox"
+      multiple={true}
+      name="files[]"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+  </div>
+  <ul
+    data-radium={true}
+  />
+</div>
+`;
+
+exports[`components/FileDrop should change style onDragOver and onDragEnd 3`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    id="fileDrop"
+    onClick={[Function]}
+    onDragEnd={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "1px dashed #ccc",
+        "minHeight": "100px",
+        "padding": "10px",
+      }
+    }
+  >
+    Drop files here or click to 
+    <span
+      id="browse"
+    >
+      browse
+    </span>
+    .
+    <input
+      data-radium={true}
+      id="fileBox"
+      multiple={true}
+      name="files[]"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+  </div>
+  <ul
+    data-radium={true}
+  />
+</div>
+`;
+
+exports[`components/FileDrop should change style onDragOver and onDragLeave 1`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    id="fileDrop"
+    onClick={[Function]}
+    onDragEnd={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "1px dashed #ccc",
+        "minHeight": "100px",
+        "padding": "10px",
+      }
+    }
+  >
+    Drop files here or click to 
+    <span
+      id="browse"
+    >
+      browse
+    </span>
+    .
+    <input
+      data-radium={true}
+      id="fileBox"
+      multiple={true}
+      name="files[]"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+  </div>
+  <ul
+    data-radium={true}
+  />
+</div>
+`;
+
+exports[`components/FileDrop should change style onDragOver and onDragLeave 2`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    id="fileDrop"
+    onClick={[Function]}
+    onDragEnd={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "2px dashed rgb(0, 188, 212)",
+        "minHeight": "100px",
+        "padding": "10px",
+      }
+    }
+  >
+    Drop files here or click to 
+    <span
+      id="browse"
+    >
+      browse
+    </span>
+    .
+    <input
+      data-radium={true}
+      id="fileBox"
+      multiple={true}
+      name="files[]"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+  </div>
+  <ul
+    data-radium={true}
+  />
+</div>
+`;
+
+exports[`components/FileDrop should change style onDragOver and onDragLeave 3`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    id="fileDrop"
+    onClick={[Function]}
+    onDragEnd={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "1px dashed #ccc",
+        "minHeight": "100px",
+        "padding": "10px",
+      }
+    }
+  >
+    Drop files here or click to 
+    <span
+      id="browse"
+    >
+      browse
+    </span>
+    .
+    <input
+      data-radium={true}
+      id="fileBox"
+      multiple={true}
+      name="files[]"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+  </div>
+  <ul
+    data-radium={true}
+  />
+</div>
+`;
+
+exports[`components/FileDrop should display given files 1`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    id="fileDrop"
+    onClick={[Function]}
+    onDragEnd={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "1px dashed #ccc",
+        "minHeight": "100px",
+        "padding": "10px",
+      }
+    }
+  >
+    Drop files here or click to 
+    <span
+      id="browse"
+    >
+      browse
+    </span>
+    .
+    <input
+      data-radium={true}
+      id="fileBox"
+      multiple={true}
+      name="files[]"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+  </div>
+  <ul
+    data-radium={true}
+  >
+    <li>
+      file1
+    </li>
+    <li>
+      file2
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`components/FileDrop should render correctly 1`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    id="fileDrop"
     onClick={[Function]}
     onDragEnd={[Function]}
     onDragLeave={[Function]}

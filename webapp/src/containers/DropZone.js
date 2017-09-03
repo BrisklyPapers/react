@@ -13,7 +13,14 @@ class DropZone extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = this.getInitialState()
+        this.state = this.getInitialState();
+
+        this.onDrop = this.onDrop.bind(this);
+        this.addTag = this.addTag.bind(this);
+        this.deleteTag = this.deleteTag.bind(this);
+        this.changeTag = this.changeTag.bind(this);
+        this.uploadFiles = this.uploadFiles.bind(this);
+        this.componentWillUpdate = this.componentWillUpdate.bind(this);
     };
 
     getInitialState() {
