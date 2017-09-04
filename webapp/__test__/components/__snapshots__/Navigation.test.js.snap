@@ -160,6 +160,7 @@ exports[`components/Navigation renders correctly 1`] = `
       <button
         disabled={false}
         href={undefined}
+        id="upload"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -246,6 +247,7 @@ exports[`components/Navigation renders correctly 1`] = `
       <button
         disabled={true}
         href={undefined}
+        id="login"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}

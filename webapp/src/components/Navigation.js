@@ -14,6 +14,7 @@ class Navigation extends React.Component {
                         <ToolbarTitle text="Briskly Papers"/>
                         <Search />
                         <FlatButton
+                            id="upload"
                             label="Upload files"
                             secondary={true}
                             onClick={this.props.showFileUploadPage}
@@ -21,6 +22,7 @@ class Navigation extends React.Component {
                     </ToolbarGroup>
                     <ToolbarGroup lastChild={true}>
                         <FlatButton
+                            id="login"
                             label="Login"
                             secondary={true}
                             disabled={true}

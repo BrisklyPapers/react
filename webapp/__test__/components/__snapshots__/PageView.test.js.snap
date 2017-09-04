@@ -7,3 +7,5 @@ exports[`components/PageView renders correctly 1`] = `
   </span>
 </div>
 `;
+
+exports[`components/PageView renders without children 1`] = `<div />`;

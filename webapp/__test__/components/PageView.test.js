@@ -9,4 +9,11 @@ describe('components/PageView', () => {
         );
         expect(pageView.toJSON()).toMatchSnapshot();
     });
+
+    it('renders without children', () => {
+        const pageView = renderer.create(
+            <PageView visible={false}><span>Child</span></PageView>
+        );
+        expect(pageView.toJSON()).toMatchSnapshot();
+    });
 });
