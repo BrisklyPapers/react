@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/InputTag renders correctly 1`] = `
+exports[`components/InputTag should render correctly 1`] = `
 <div
   data-radium={true}
   style={

@@ -151,7 +151,7 @@ describe('components/FileDrop', () => {
         expect(fileDrop.toJSON()).toMatchSnapshot();
     });
 
-    it('should trigger click event on file input', done => {
+    it('should trigger click event on file input', (done) => {
         const fileDrop = mount(<FileDrop dropFiles={() => {}} files={[]} />);
         const clickSpy = spy(fileDrop.instance().inputElement, 'click');
         fileDrop.find('#fileDrop').simulate('click');

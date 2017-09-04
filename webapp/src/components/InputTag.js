@@ -3,6 +3,7 @@ import Radium from 'radium';
 import Chip from 'material-ui/Chip';
 import TextField from 'material-ui/TextField';
 import PropTypes from 'prop-types';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class InputTag extends React.Component {
 
@@ -10,33 +11,39 @@ class InputTag extends React.Component {
         super(props);
         this.state = {
             count: 0
-        }
+        };
+
+        this.handleRequestDelete = this.handleRequestDelete.bind(this);
+        this.onInputChange = this.onInputChange.bind(this);
+        this.onInputKeyPress = this.onInputKeyPress.bind(this);
     };
 
     render() {
         return (
-            <div
-                style={styles.wrapper}
-            >
-                {this.props.tags.map((tag) =>
-                    <Chip
-                        key={tag.key}
-                        onRequestDelete={() => this.handleRequestDelete(tag.key)}
-                        style={styles.base}
-                    >
-                        {tag.label}
-                    </Chip>
-                )}
-                <TextField
-                    id="search"
-                    hintText="Enter tag, press Enter"
-                    value={this.props.tag}
-                    onChange={this.onInputChange.bind(this)}
-                    onKeyPress={this.onInputKeyPress.bind(this)}
-                    ref={input => this.inputElement = input}
-                    style={styles.input}
-                />
-            </div>
+            <MuiThemeProvider>
+                <div
+                    style={styles.wrapper}
+                >
+                    {this.props.tags.map((tag) =>
+                        <Chip
+                            key={tag.key}
+                            onRequestDelete={() => this.handleRequestDelete(tag.key)}
+                            style={styles.base}
+                        >
+                            {tag.label}
+                        </Chip>
+                    )}
+                    <TextField
+                        id="search"
+                        hintText="Enter tag, press Enter"
+                        value={this.props.tag}
+                        onChange={this.onInputChange}
+                        onKeyPress={this.onInputKeyPress}
+                        ref={input => this.inputElement = input}
+                        style={styles.input}
+                    />
+                </div>
+            </MuiThemeProvider>
         );
     };
 
