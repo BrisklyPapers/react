@@ -1,3 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`components/SearchResults contains some search results 1`] = `
+<div>
+  <div
+    data-radium={true}
+  >
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "em{background-color: yellow;}",
+        }
+      }
+    />
+    <a
+      href="http://briskly-papers.com"
+      target="_blank"
+      title="bill.pdf"
+    >
+      bill.pdf
+    </a>
+    <br />
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "testing search results",
+        }
+      }
+    />
+  </div>
+  <div
+    data-radium={true}
+  >
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "em{background-color: yellow;}",
+        }
+      }
+    />
+    <a
+      href="https://localhost/search?q=flowers"
+      target="_blank"
+      title="flower.jpg"
+    >
+      flower.jpg
+    </a>
+    <br />
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "pictures showing some flowers",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
 exports[`components/SearchResults renders correctly 1`] = `<div />`;
