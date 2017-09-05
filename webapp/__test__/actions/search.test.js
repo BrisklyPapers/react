@@ -2,7 +2,7 @@ import {
     searchInputKeyPressed, SEARCH_INPUT_KEY_PRESSED,
     searchDocuments, SEARCH_DOCUMENTS,
     fetchDocumentsIfNeeded, RECEIVE_DOCUMENTS, RECEIVE_DOCUMENTS_ERROR
-} from '../../src/actions/search.js';
+} from '../../src/actions';
 
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'

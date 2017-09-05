@@ -2,7 +2,7 @@ import {
     fileDropped, FILE_DROP,
     fileStartUpload, FILE_START_UPLOAD,
     storeDocuments, DOCUMENTS_STORED, DOCUMENTS_NOT_STORED
-} from '../../src/actions/file_upload.js';
+} from '../../src/actions';
 
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'

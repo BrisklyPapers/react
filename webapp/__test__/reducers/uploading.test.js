@@ -1,6 +1,6 @@
 import React from 'react';
 import {FILE_START_UPLOAD, DOCUMENTS_STORED, DOCUMENTS_NOT_STORED} from '../../src/actions';
-import {uploading} from '../../src/reducers/uploading';
+import {uploading} from '../../src/reducers';
 import Immutable from 'seamless-immutable';
 
 describe('reducers/uploading', () => {

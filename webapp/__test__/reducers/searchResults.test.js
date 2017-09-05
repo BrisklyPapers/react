@@ -1,6 +1,6 @@
 import React from 'react';
-import {SEARCH_INPUT_KEY_PRESSED, SEARCH_DOCUMENTS, RECEIVE_DOCUMENTS, RECEIVE_DOCUMENTS_ERROR} from '../../src/actions/search.js';
-import {searchResults} from '../../src/reducers/searchResults';
+import {SEARCH_INPUT_KEY_PRESSED, SEARCH_DOCUMENTS, RECEIVE_DOCUMENTS, RECEIVE_DOCUMENTS_ERROR} from '../../src/actions';
+import {searchResults} from '../../src/reducers';
 import Immutable from 'seamless-immutable';
 
 describe('reducers/searchResults SEARCH_INPUT_KEY_PRESSED', () => {

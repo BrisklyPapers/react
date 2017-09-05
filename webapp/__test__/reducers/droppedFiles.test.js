@@ -1,6 +1,6 @@
 import React from 'react';
 import {FILE_DROP, DOCUMENTS_STORED, DOCUMENTS_NOT_STORED} from '../../src/actions';
-import {droppedFiles} from '../../src/reducers/droppedFiles';
+import {droppedFiles} from '../../src/reducers';
 import Immutable from 'seamless-immutable';
 
 describe('reducers/droppedFiles', () => {

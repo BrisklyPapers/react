@@ -1,7 +1,7 @@
 import {
     showResultPage, PAGEVIEW_SEARCH_RESULTS,
     showFileUploadPage, PAGEVIEW_FILE_UPLOAD
-} from '../../src/actions/navigation.js';
+} from '../../src/actions';
 
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'

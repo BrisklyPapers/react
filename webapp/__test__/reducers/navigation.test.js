@@ -1,6 +1,6 @@
 import React from 'react';
 import {PAGEVIEW_SEARCH_RESULTS, PAGEVIEW_FILE_UPLOAD} from '../../src/actions';
-import {navigation} from '../../src/reducers/navigation';
+import {navigation} from '../../src/reducers';
 import Immutable from 'seamless-immutable';
 
 describe('reducers/navigation', () => {
