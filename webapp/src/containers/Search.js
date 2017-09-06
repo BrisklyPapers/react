@@ -20,9 +20,7 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-const Search = connect(
+export default  connect(
     mapStateToProps,
     mapDispatchToProps
 )(SearchComponent);
-
-export default Search;
