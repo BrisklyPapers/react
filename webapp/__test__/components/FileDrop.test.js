@@ -142,6 +142,51 @@ describe('components/FileDrop', () => {
         expect(files).toEqual([{name: 'file1'}, {name: 'file2'}]);
     });
 
+    it('should ignore unkown events', () => {
+        const event = {
+            preventDefault: () => {
+            }
+        };
+
+        let files = [];
+        const dropFiles = (droppedFiles) => {
+            files = droppedFiles;
+        };
+
+        const fileDrop = renderer.create(
+            <FileDrop dropFiles={dropFiles} files={files} />
+        );
+
+        let tree = fileDrop.toJSON();
+        tree.children[0].props.onDrop(event);
+        expect(fileDrop.toJSON()).toMatchSnapshot();
+
+        expect(files).toEqual([]);
+    });
+
+    it('should ignore incomplete dataTransfer events', () => {
+        const event = {
+            preventDefault: () => {
+            },
+            dataTransfer: {}
+        };
+
+        let files = [];
+        const dropFiles = (droppedFiles) => {
+            files = droppedFiles;
+        };
+
+        const fileDrop = renderer.create(
+            <FileDrop dropFiles={dropFiles} files={files} />
+        );
+
+        let tree = fileDrop.toJSON();
+        tree.children[0].props.onDrop(event);
+        expect(fileDrop.toJSON()).toMatchSnapshot();
+
+        expect(files).toEqual([]);
+    });
+
     it('should display given files', () => {
         const files = [{name: 'file1'}, {name: 'file2'}];
 
@@ -159,5 +204,30 @@ describe('components/FileDrop', () => {
             expect(clickSpy.callCount).toEqual(1)
             done()
         }, 0)
-    })
+    });
+
+    it('should preventDefault when calling cancelEvent', () => {
+        const fileDrop = mount(<FileDrop dropFiles={() => {}} files={[]} />);
+        const event = {};
+        event.preventDefault = spy();
+
+        fileDrop.instance().cancelEvent(event);
+
+        expect(event.preventDefault.callCount).toEqual(1);
+    });
+
+    it('should ignore preventDefault when calling cancelEvent with incomplete event', () => {
+        const fileDrop = mount(<FileDrop dropFiles={() => {}} files={[]} />);
+        expect(fileDrop.instance().cancelEvent({})).toEqual(undefined);
+    });
+
+    it('should use window.event when calling cancelEvent with event given', () => {
+        const fileDrop = mount(<FileDrop dropFiles={() => {}} files={[]} />);
+        window.event = {};
+        window.event.preventDefault = spy();
+
+        fileDrop.instance().cancelEvent();
+
+        expect(window.event.preventDefault.callCount).toEqual(1);
+    });
 });

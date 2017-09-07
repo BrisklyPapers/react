@@ -47,7 +47,7 @@ describe('actions/fetchDocuments', () => {
         myMock.restore();
     });
 
-    it('returns date and a valid response', () => {
+    it('should return date and a valid response', () => {
         const mockResult = [
             {fileName: "foo.pdf", url: "http://", text: "foo", tags: []}
         ];
@@ -71,11 +71,33 @@ describe('actions/fetchDocuments', () => {
         });
     });
 
-    it('returns an invalid response', () => {
+    it('should handle an invalid response', () => {
         const mockResult = [
             {fileName: "foo.pdf", url: "http://", text: "foo", tags: []}
         ];
         myMock = fetchMock.get('/ajax/document/search?q=foo', 401);
+
+        return store.dispatch(fetchDocumentsIfNeeded("foo"))
+            .then(() => {
+                expect(myMock.called('/ajax/document/search?q=foo')).toBe(true);
+
+                const expectedActions = store.getActions();
+                expect(expectedActions.length).toBe(2);
+                expect(expectedActions).toContainEqual({
+                    type: SEARCH_DOCUMENTS,
+                    text: "foo"
+                });
+                expect(expectedActions).toContainEqual({
+                    type: RECEIVE_DOCUMENTS_ERROR,
+                    documents: [],
+                    receivedAt: Date.now()
+                });
+        });
+    });
+
+    it('should handle an invalid json in response', () => {
+        const mockResult = 'invalid json';
+        myMock = fetchMock.get('/ajax/document/search?q=foo', mockResult);
 
         return store.dispatch(fetchDocumentsIfNeeded("foo"))
             .then(() => {

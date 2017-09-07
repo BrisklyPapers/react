@@ -477,6 +477,100 @@ exports[`components/FileDrop should display given files 1`] = `
 </div>
 `;
 
+exports[`components/FileDrop should ignore incomplete dataTransfer events 1`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    id="fileDrop"
+    onClick={[Function]}
+    onDragEnd={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "1px dashed #ccc",
+        "minHeight": "100px",
+        "padding": "10px",
+      }
+    }
+  >
+    Drop files here or click to 
+    <span
+      id="browse"
+    >
+      browse
+    </span>
+    .
+    <input
+      data-radium={true}
+      id="fileBox"
+      multiple={true}
+      name="files[]"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+  </div>
+  <ul
+    data-radium={true}
+  />
+</div>
+`;
+
+exports[`components/FileDrop should ignore unkown events 1`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    id="fileDrop"
+    onClick={[Function]}
+    onDragEnd={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "1px dashed #ccc",
+        "minHeight": "100px",
+        "padding": "10px",
+      }
+    }
+  >
+    Drop files here or click to 
+    <span
+      id="browse"
+    >
+      browse
+    </span>
+    .
+    <input
+      data-radium={true}
+      id="fileBox"
+      multiple={true}
+      name="files[]"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+  </div>
+  <ul
+    data-radium={true}
+  />
+</div>
+`;
+
 exports[`components/FileDrop should render correctly 1`] = `
 <div
   data-radium={true}

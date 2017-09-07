@@ -43,7 +43,7 @@ export const DOCUMENTS_STORED = 'DOCUMENTS_STORED';
 const documentsStored = (json) => {
     return {
         type: DOCUMENTS_STORED,
-        documents: json.map ? json : [],
+        documents: json,
         receivedAt: Date.now()
     }
 };

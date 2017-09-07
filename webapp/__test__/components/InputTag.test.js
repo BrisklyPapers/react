@@ -86,7 +86,7 @@ describe('components/InputTag', () => {
             expect(changeTagSpy.calledWithMatch("f")).toEqual(true);
             done();
         }, 0);
-    })
+    });
 
     it('should clear input and create new tag if Return is pressed', (done) => {
         const changeTagSpy = spy();
@@ -109,6 +109,30 @@ describe('components/InputTag', () => {
             expect(changeTagSpy.calledWithMatch("")).toEqual(true);
             expect(addTagSpy.callCount).toEqual(1);
             expect(addTagSpy.calledWithMatch({key: 1, label: 'f'})).toEqual(true);
+            done();
+        }, 0);
+    });
+
+
+    it('should ignore key press if not Return', (done) => {
+        const changeTagSpy = spy();
+        const addTagSpy = spy();
+        const wrapper = mount(
+            <InputTag
+                addTag={addTagSpy}
+                deleteTag={() => {}}
+                changeTag={changeTagSpy}
+                tags={[]}
+                tag=""
+            />
+        );
+        expect(wrapper.find('TextField')).toHaveLength(1);
+        wrapper.find('TextField').first().find('input').simulate('keyPress', {key: 'any', target: {value: 'f'}});
+
+        expect.assertions(3);
+        setTimeout(() => {
+            expect(changeTagSpy.callCount).toEqual(0);
+            expect(addTagSpy.callCount).toEqual(0);
             done();
         }, 0);
     });

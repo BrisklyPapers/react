@@ -18,7 +18,7 @@ export const RECEIVE_DOCUMENTS = 'RECEIVE_DOCUMENTS';
 const receiveDocuments = (json) => {
     return {
         type: RECEIVE_DOCUMENTS,
-        documents: json.map ? json : [],
+        documents: json,
         receivedAt: Date.now()
     }
 };
