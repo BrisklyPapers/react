@@ -30,11 +30,11 @@ let store = createStore(
 );
 /* eslint-enable */
 
-render(
+export default render(
     <MuiThemeProvider>
         <Provider store={store}>
             <App />
         </Provider>
     </MuiThemeProvider>,
-    document.getElementById('root')
+    document.getElementById('root') || document.createElement('div')
 );

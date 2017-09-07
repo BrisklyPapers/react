@@ -1,11 +1,17 @@
 import React from 'react';
 import Search from '../../src/containers/Search';
-import {SEARCH_INPUT_KEY_PRESSED, PAGEVIEW_SEARCH_RESULTS} from '../../src/actions';
+import dependency from '../../src/actions';
 import {shallow} from 'enzyme';
 import {spy} from 'sinon';
 import configureMockStore from 'redux-mock-store';
 
 const mockStore = configureMockStore();
+
+jest.mock('../../src/actions', () => ({
+    searchInputKeyPressed: jest.fn(),
+    fetchDocumentsIfNeeded: jest.fn(),
+    showResultPage: jest.fn()
+}));
 
 describe('containers/Search', () => {
     let wrapper, store;
@@ -29,15 +35,15 @@ describe('containers/Search', () => {
         wrapper.props().triggerSearch(event);
 
         expect(store.dispatch.callCount).toEqual(2);
-        expect(store.dispatch.calledWithMatch({text: "test", type: SEARCH_INPUT_KEY_PRESSED})).toEqual(true);
-        //expect(store.dispatch.calledWithMatch({text: "test", type: 'SEARCH_DOCUMENTS'})).toEqual(true);
+        expect(dependency.searchInputKeyPressed).toBeCalled();
+        expect(dependency.fetchDocumentsIfNeeded).toBeCalled();
     });
 
-    it('maps triggerSearch to dispatch search action', () => {
+    it('maps onFocus to dispatch showResultPage', () => {
         wrapper.props().onFocus();
 
         expect(store.dispatch.callCount).toEqual(1);
-        expect(store.dispatch.calledWithMatch({type: PAGEVIEW_SEARCH_RESULTS})).toEqual(true);
+        expect(dependency.showResultPage).toBeCalled();
     });
 
 });

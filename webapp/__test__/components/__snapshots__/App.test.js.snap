@@ -7,7 +7,7 @@ exports[`components/App renders correctly 1`] = `
     <Connect(SearchResults) />
   </Connect(PageView)>
   <Connect(PageView)>
-    <Connect(DropZone) />
+    <Connect(DropZoneComponent) />
   </Connect(PageView)>
 </div>
 `;

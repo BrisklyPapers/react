@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {storeDocuments, fileDropped} from '../actions';
 
-class DropZone extends React.Component {
+export class DropZoneComponent extends React.Component {
 
     constructor(props) {
         super(props);
@@ -27,7 +27,8 @@ class DropZone extends React.Component {
         return {
             tag: "",
             tags: [],
-            files: []
+            files: [],
+            completed: false
         };
     };
 
@@ -84,8 +85,10 @@ class DropZone extends React.Component {
     deleteTag(key) {
         let tags = this.state.tags;
         const tagToDelete = tags.map((tag) => tag.key).indexOf(key);
-        tags.splice(tagToDelete, 1);
-        this.setState({tags: tags});
+        if(0 <= tagToDelete) {
+            tags.splice(tagToDelete, 1);
+            this.setState({tags: tags});
+        }
     };
 
     changeTag(value) {
@@ -93,7 +96,9 @@ class DropZone extends React.Component {
     };
 
     uploadFiles() {
-        this.props.storeDocuments(this.state.files, this.state.tags);
+        if (this.state.files.length) {
+            this.props.storeDocuments(this.state.files, this.state.tags);
+        }
     };
 
     componentWillUpdate(nextProps, nextState) {
@@ -103,8 +108,12 @@ class DropZone extends React.Component {
     };
 }
 
-DropZone.propTypes = {
-    storeDocuments: PropTypes.func.isRequired
+DropZoneComponent.propTypes = {
+    storeDocuments: PropTypes.func.isRequired,
+    dropFiles: PropTypes.func.isRequired,
+    uploading: PropTypes.bool.isRequired,
+    error: PropTypes.bool.isRequired,
+    errorMessage: PropTypes.string.isRequired
 };
 
 var styles = {
@@ -116,7 +125,7 @@ var styles = {
     }
 };
 
-DropZone = Radium(DropZone);
+DropZoneComponent = Radium(DropZoneComponent);
 
 const mapStateToProps = (state) => {
     return {
@@ -139,9 +148,7 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-DropZone = connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(DropZone);
-
-export default DropZone;
+)(DropZoneComponent);
