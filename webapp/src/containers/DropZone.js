@@ -61,7 +61,7 @@ class DropZone extends React.Component {
                     style={styles.button}
                     onClick={this.uploadFiles}
                     disabled={this.props.uploading}
-                />
+                  />
             </div>
         );
     };
