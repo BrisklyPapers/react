@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/BrisklyPapers/react.svg?branch=master)](https://travis-ci.org/BrisklyPapers/react)
 [![Coverage Status](https://coveralls.io/repos/github/BrisklyPapers/react/badge.svg?branch=master)](https://coveralls.io/github/BrisklyPapers/react?branch=master)
-[![Known Vulnerabilities](https://snyk.io/test/github/brisklypapers/react/badge.svg?targetFile=webapp%2Fpackage.json)](https://snyk.io/test/github/brisklypapers/react?targetFile=webapp%2Fpackage.json)
+[![Known Vulnerabilities](https://snyk.io/test/github/brisklypapers/react/badge.svg)](https://snyk.io/test/github/brisklypapers/react)
 [![Greenkeeper badge](https://badges.greenkeeper.io/BrisklyPapers/react.svg)](https://greenkeeper.io/)
 [![dependencies Status](https://david-dm.org/BrisklyPapers/react/status.svg)](https://david-dm.org/BrisklyPapers/react)
 [![devDependencies Status](https://david-dm.org/BrisklyPapers/react/dev-status.svg)](https://david-dm.org/BrisklyPapers/react?type=dev)
