@@ -1,0 +1,60 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.fetchDocumentsIfNeeded = exports.fetchDocuments = exports.RECEIVE_DOCUMENTS_ERROR = exports.RECEIVE_DOCUMENTS = exports.searchDocuments = exports.SEARCH_DOCUMENTS = exports.searchInputKeyPressed = exports.SEARCH_INPUT_KEY_PRESSED = undefined;var _isomorphicFetch = require('isomorphic-fetch');var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var SEARCH_INPUT_KEY_PRESSED = exports.SEARCH_INPUT_KEY_PRESSED = 'SEARCH_INPUT_KEY_PRESSED';
+var searchInputKeyPressed = exports.searchInputKeyPressed = function searchInputKeyPressed(text) {
+    return {
+        type: SEARCH_INPUT_KEY_PRESSED,
+        text: text };
+
+};
+
+var SEARCH_DOCUMENTS = exports.SEARCH_DOCUMENTS = 'SEARCH_DOCUMENTS';
+var searchDocuments = exports.searchDocuments = function searchDocuments(text) {
+    return {
+        type: SEARCH_DOCUMENTS,
+        text: text };
+
+};
+
+var RECEIVE_DOCUMENTS = exports.RECEIVE_DOCUMENTS = 'RECEIVE_DOCUMENTS';
+var receiveDocuments = function receiveDocuments(json) {
+    return {
+        type: RECEIVE_DOCUMENTS,
+        documents: json, // json.map ? json : [],
+        receivedAt: Date.now() };
+
+};
+
+var RECEIVE_DOCUMENTS_ERROR = exports.RECEIVE_DOCUMENTS_ERROR = 'RECEIVE_DOCUMENTS_ERROR';
+var receiveDocumentsError = function receiveDocumentsError(error) {
+    return {
+        type: RECEIVE_DOCUMENTS_ERROR,
+        documents: [],
+        receivedAt: Date.now(),
+        error: error };
+
+};
+
+var fetchDocuments = exports.fetchDocuments = function fetchDocuments(text) {
+
+    return function (dispatch) {
+
+        dispatch(searchDocuments(text));
+
+        return (0, _isomorphicFetch2.default)('http://abc.de/ajax/document/search?q=' + text).
+        then(function (response) {return response.json();}).
+        then(function (json) {return dispatch(receiveDocuments(json));}).
+        catch(function (error) {return dispatch(receiveDocumentsError(error));});
+    };
+};
+
+var fetchDocumentsIfNeeded = exports.fetchDocumentsIfNeeded = function fetchDocumentsIfNeeded(text) {
+
+    return function (dispatch, getState) {
+        if (1 /* TODO enter Delay */) {
+                return dispatch(fetchDocuments(text));
+            } else {
+            return Promise.resolve();
+        }
+    };
+};

@@ -1,0 +1,38 @@
+'use strict';var _search = require('../../src/actions/search.js');
+
+
+
+
+describe('actions/searchInputKeyPressed', function () {
+    it('returns the given input', function () {
+        expect(
+        (0, _search.searchInputKeyPressed)("test")).
+        toEqual({
+            type: _search.SEARCH_INPUT_KEY_PRESSED,
+            text: "test" });
+
+    });
+});
+
+describe('actions/searchDocuments', function () {
+    it('returns the given test string', function () {
+        expect(
+        (0, _search.searchDocuments)("test")).
+        toEqual({
+            type: _search.SEARCH_DOCUMENTS,
+            text: "test" });
+
+    });
+});
+
+describe('actions/receiveDocuments', function () {
+    it('returns date and an empty array', function () {
+        expect(
+        receiveDocuments("")).
+        toEqual({
+            type: RECEIVE_DOCUMENTS,
+            documents: [],
+            receivedAt: Date.now() });
+
+    });
+});

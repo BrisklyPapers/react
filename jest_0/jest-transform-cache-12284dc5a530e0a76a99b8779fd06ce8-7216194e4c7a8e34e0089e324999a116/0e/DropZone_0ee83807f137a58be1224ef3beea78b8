@@ -1,0 +1,147 @@
+/* istanbul ignore next */'use strict';Object.defineProperty(exports, "__esModule", { value: true });var cov_1ocxstmdb = function () {var path = '/home/node/webapp/src/containers/DropZone.js',hash = 'f9e815ad97b909648270829d88ac214c5d4163f7',global = new Function('return this')(),gcv = '__coverage__',coverageData = { path: '/home/node/webapp/src/containers/DropZone.js', statementMap: { '0': { start: { line: 15, column: 8 }, end: { line: 15, column: 21 } }, '1': { start: { line: 16, column: 8 }, end: { line: 16, column: 44 } }, '2': { start: { line: 18, column: 8 }, end: { line: 18, column: 45 } }, '3': { start: { line: 19, column: 8 }, end: { line: 19, column: 45 } }, '4': { start: { line: 20, column: 8 }, end: { line: 20, column: 51 } }, '5': { start: { line: 21, column: 8 }, end: { line: 21, column: 51 } }, '6': { start: { line: 22, column: 8 }, end: { line: 22, column: 55 } }, '7': { start: { line: 23, column: 8 }, end: { line: 23, column: 71 } }, '8': { start: { line: 27, column: 8 }, end: { line: 31, column: 10 } }, '9': { start: { line: 35, column: 8 }, end: { line: 66, column: 10 } }, '10': { start: { line: 70, column: 21 }, end: { line: 70, column: 37 } }, '11': { start: { line: 71, column: 8 }, end: { line: 73, column: 9 } }, '12': { start: { line: 72, column: 12 }, end: { line: 72, column: 34 } }, '13': { start: { line: 74, column: 8 }, end: { line: 74, column: 39 } }, '14': { start: { line: 75, column: 8 }, end: { line: 75, column: 36 } }, '15': { start: { line: 79, column: 19 }, end: { line: 79, column: 34 } }, '16': { start: { line: 80, column: 8 }, end: { line: 80, column: 23 } }, '17': { start: { line: 81, column: 8 }, end: { line: 81, column: 36 } }, '18': { start: { line: 85, column: 19 }, end: { line: 85, column: 34 } }, '19': { start: { line: 86, column: 28 }, end: { line: 86, column: 67 } }, '20': { start: { line: 86, column: 46 }, end: { line: 86, column: 53 } }, '21': { start: { line: 87, column: 8 }, end: { line: 87, column: 36 } }, '22': { start: { line: 88, column: 8 }, end: { line: 88, column: 36 } }, '23': { start: { line: 92, column: 8 }, end: { line: 92, column: 36 } }, '24': { start: { line: 96, column: 8 }, end: { line: 96, column: 69 } }, '25': { start: { line: 100, column: 8 }, end: { line: 102, column: 9 } }, '26': { start: { line: 101, column: 12 }, end: { line: 101, column: 50 } }, '27': { start: { line: 106, column: 0 }, end: { line: 108, column: 2 } }, '28': { start: { line: 110, column: 13 }, end: { line: 117, column: 1 } }, '29': { start: { line: 119, column: 0 }, end: { line: 119, column: 28 } }, '30': { start: { line: 121, column: 24 }, end: { line: 127, column: 1 } }, '31': { start: { line: 122, column: 4 }, end: { line: 126, column: 6 } }, '32': { start: { line: 129, column: 27 }, end: { line: 140, column: 1 } }, '33': { start: { line: 130, column: 4 }, end: { line: 139, column: 6 } }, '34': { start: { line: 132, column: 12 }, end: { line: 132, column: 50 } }, '35': { start: { line: 135, column: 12 }, end: { line: 137, column: 13 } }, '36': { start: { line: 136, column: 16 }, end: { line: 136, column: 48 } }, '37': { start: { line: 142, column: 0 }, end: { line: 145, column: 12 } } }, fnMap: { '0': { name: '(anonymous_0)', decl: { start: { line: 14, column: 4 }, end: { line: 14, column: 5 } }, loc: { start: { line: 14, column: 23 }, end: { line: 24, column: 5 } }, line: 14 }, '1': { name: '(anonymous_1)', decl: { start: { line: 26, column: 4 }, end: { line: 26, column: 5 } }, loc: { start: { line: 26, column: 22 }, end: { line: 32, column: 5 } }, line: 26 }, '2': { name: '(anonymous_2)', decl: { start: { line: 34, column: 4 }, end: { line: 34, column: 5 } }, loc: { start: { line: 34, column: 13 }, end: { line: 67, column: 5 } }, line: 34 }, '3': { name: '(anonymous_3)', decl: { start: { line: 69, column: 4 }, end: { line: 69, column: 5 } }, loc: { start: { line: 69, column: 18 }, end: { line: 76, column: 5 } }, line: 69 }, '4': { name: '(anonymous_4)', decl: { start: { line: 78, column: 4 }, end: { line: 78, column: 5 } }, loc: { start: { line: 78, column: 16 }, end: { line: 82, column: 5 } }, line: 78 }, '5': { name: '(anonymous_5)', decl: { start: { line: 84, column: 4 }, end: { line: 84, column: 5 } }, loc: { start: { line: 84, column: 19 }, end: { line: 89, column: 5 } }, line: 84 }, '6': { name: '(anonymous_6)', decl: { start: { line: 86, column: 37 }, end: { line: 86, column: 38 } }, loc: { start: { line: 86, column: 46 }, end: { line: 86, column: 53 } }, line: 86 }, '7': { name: '(anonymous_7)', decl: { start: { line: 91, column: 4 }, end: { line: 91, column: 5 } }, loc: { start: { line: 91, column: 21 }, end: { line: 93, column: 5 } }, line: 91 }, '8': { name: '(anonymous_8)', decl: { start: { line: 95, column: 4 }, end: { line: 95, column: 5 } }, loc: { start: { line: 95, column: 18 }, end: { line: 97, column: 5 } }, line: 95 }, '9': { name: '(anonymous_9)', decl: { start: { line: 99, column: 4 }, end: { line: 99, column: 5 } }, loc: { start: { line: 99, column: 46 }, end: { line: 103, column: 5 } }, line: 99 }, '10': { name: '(anonymous_10)', decl: { start: { line: 121, column: 24 }, end: { line: 121, column: 25 } }, loc: { start: { line: 121, column: 35 }, end: { line: 127, column: 1 } }, line: 121 }, '11': { name: '(anonymous_11)', decl: { start: { line: 129, column: 27 }, end: { line: 129, column: 28 } }, loc: { start: { line: 129, column: 41 }, end: { line: 140, column: 1 } }, line: 129 }, '12': { name: '(anonymous_12)', decl: { start: { line: 131, column: 24 }, end: { line: 131, column: 25 } }, loc: { start: { line: 131, column: 41 }, end: { line: 133, column: 9 } }, line: 131 }, '13': { name: '(anonymous_13)', decl: { start: { line: 134, column: 19 }, end: { line: 134, column: 20 } }, loc: { start: { line: 134, column: 30 }, end: { line: 138, column: 9 } }, line: 134 } }, branchMap: { '0': { loc: { start: { line: 55, column: 17 }, end: { line: 56, column: 83 } }, type: 'binary-expr', locations: [{ start: { line: 55, column: 17 }, end: { line: 55, column: 37 } }, { start: { line: 56, column: 16 }, end: { line: 56, column: 83 } }], line: 55 }, '1': { loc: { start: { line: 100, column: 8 }, end: { line: 102, column: 9 } }, type: 'if', locations: [{ start: { line: 100, column: 8 }, end: { line: 102, column: 9 } }, { start: { line: 100, column: 8 }, end: { line: 102, column: 9 } }], line: 100 }, '2': { loc: { start: { line: 100, column: 12 }, end: { line: 100, column: 103 } }, type: 'binary-expr', locations: [{ start: { line: 100, column: 12 }, end: { line: 100, column: 41 } }, { start: { line: 100, column: 45 }, end: { line: 100, column: 70 } }, { start: { line: 100, column: 74 }, end: { line: 100, column: 103 } }], line: 100 } }, s: { '0': 0, '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 0, '9': 0, '10': 0, '11': 0, '12': 0, '13': 0, '14': 0, '15': 0, '16': 0, '17': 0, '18': 0, '19': 0, '20': 0, '21': 0, '22': 0, '23': 0, '24': 0, '25': 0, '26': 0, '27': 0, '28': 0, '29': 0, '30': 0, '31': 0, '32': 0, '33': 0, '34': 0, '35': 0, '36': 0, '37': 0 }, f: { '0': 0, '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 0, '9': 0, '10': 0, '11': 0, '12': 0, '13': 0 }, b: { '0': [0, 0], '1': [0, 0], '2': [0, 0, 0] }, _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c' },coverage = global[gcv] || (global[gcv] = {});if (coverage[path] && coverage[path].hash === hash) {return coverage[path];}coverageData.hash = hash;return coverage[path] = coverageData;}();var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_radium = require('radium'); /* istanbul ignore next */var _radium2 = _interopRequireDefault(_radium);
+var /* istanbul ignore next */_FileDrop = require('../components/FileDrop'); /* istanbul ignore next */var _FileDrop2 = _interopRequireDefault(_FileDrop);
+var /* istanbul ignore next */_InputTag = require('../components/InputTag'); /* istanbul ignore next */var _InputTag2 = _interopRequireDefault(_InputTag);
+var /* istanbul ignore next */_RaisedButton = require('material-ui/RaisedButton'); /* istanbul ignore next */var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+var /* istanbul ignore next */_LinearProgress = require('material-ui/LinearProgress'); /* istanbul ignore next */var _LinearProgress2 = _interopRequireDefault(_LinearProgress);
+var /* istanbul ignore next */_Snackbar = require('material-ui/Snackbar'); /* istanbul ignore next */var _Snackbar2 = _interopRequireDefault(_Snackbar);
+var /* istanbul ignore next */_propTypes = require('prop-types'); /* istanbul ignore next */var _propTypes2 = _interopRequireDefault(_propTypes);
+var /* istanbul ignore next */_reactRedux = require('react-redux');
+var /* istanbul ignore next */_actions = require('../actions'); /* istanbul ignore next */function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var
+
+DropZone = function (_React$Component) {_inherits(DropZone, _React$Component);
+
+    function /* istanbul ignore next */DropZone(props) {/* istanbul ignore next */_classCallCheck(this, DropZone);cov_1ocxstmdb.f[0]++;cov_1ocxstmdb.s[0]++;var _this = _possibleConstructorReturn(this, (DropZone.__proto__ || Object.getPrototypeOf(DropZone)).call(this,
+        props)); /* istanbul ignore next */cov_1ocxstmdb.s[1]++;
+        /* istanbul ignore next */_this.state = /* istanbul ignore next */_this.getInitialState(); /* istanbul ignore next */cov_1ocxstmdb.s[2]++;
+
+        /* istanbul ignore next */_this.onDrop = /* istanbul ignore next */_this.onDrop.bind( /* istanbul ignore next */_this); /* istanbul ignore next */cov_1ocxstmdb.s[3]++;
+        /* istanbul ignore next */_this.addTag = /* istanbul ignore next */_this.addTag.bind( /* istanbul ignore next */_this); /* istanbul ignore next */cov_1ocxstmdb.s[4]++;
+        /* istanbul ignore next */_this.deleteTag = /* istanbul ignore next */_this.deleteTag.bind( /* istanbul ignore next */_this); /* istanbul ignore next */cov_1ocxstmdb.s[5]++;
+        /* istanbul ignore next */_this.changeTag = /* istanbul ignore next */_this.changeTag.bind( /* istanbul ignore next */_this); /* istanbul ignore next */cov_1ocxstmdb.s[6]++;
+        /* istanbul ignore next */_this.uploadFiles = /* istanbul ignore next */_this.uploadFiles.bind( /* istanbul ignore next */_this); /* istanbul ignore next */cov_1ocxstmdb.s[7]++;
+        /* istanbul ignore next */_this.componentWillUpdate = /* istanbul ignore next */_this.componentWillUpdate.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
+    }_createClass(DropZone, [{ key: 'getInitialState', value: function getInitialState()
+
+        {/* istanbul ignore next */cov_1ocxstmdb.f[1]++;cov_1ocxstmdb.s[8]++;
+            return {
+                tag: "",
+                tags: [],
+                files: [] };
+
+        } }, { key: 'render', value: function render()
+
+        {/* istanbul ignore next */cov_1ocxstmdb.f[2]++;cov_1ocxstmdb.s[9]++;
+            return (
+                /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'div', /* istanbul ignore next */null,
+                    /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_Snackbar2.default, /* istanbul ignore next */{
+                        open: this.props.error,
+                        message: this.props.errorMessage,
+                        autoHideDuration: 3000,
+                        bodyStyle: { backgroundColor: '#D32F2F' },
+                        title: 'Error' }),
+
+                    /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_FileDrop2.default, /* istanbul ignore next */{
+                        dropFiles: this.onDrop,
+                        files: this.state.files }),
+
+                    /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_InputTag2.default, /* istanbul ignore next */{
+                        addTag: this.addTag,
+                        deleteTag: this.deleteTag,
+                        changeTag: this.changeTag,
+                        tags: this.state.tags,
+                        tag: this.state.tag }),
+
+                    /* istanbul ignore next */(cov_1ocxstmdb.b[0][0]++, this.props.uploading) && /* istanbul ignore next */(cov_1ocxstmdb.b[0][1]++,
+                    /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_LinearProgress2.default, /* istanbul ignore next */{ mode: 'indeterminate', value: this.props.completed })),
+
+                    /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_RaisedButton2.default, /* istanbul ignore next */{
+                        label: 'Upload',
+                        primary: true,
+                        style: styles.button,
+                        onClick: this.uploadFiles,
+                        disabled: this.props.uploading })));
+
+
+
+        } }, { key: 'onDrop', value: function onDrop(
+
+        files) {/* istanbul ignore next */cov_1ocxstmdb.f[3]++;
+            var cFiles = /* istanbul ignore next */(cov_1ocxstmdb.s[10]++, this.state.files); /* istanbul ignore next */cov_1ocxstmdb.s[11]++;
+            for (var i = 0; i < files.length; i++) {/* istanbul ignore next */cov_1ocxstmdb.s[12]++;
+                cFiles.push(files[i]);
+            } /* istanbul ignore next */cov_1ocxstmdb.s[13]++;
+            this.setState({ files: cFiles }); /* istanbul ignore next */cov_1ocxstmdb.s[14]++;
+            this.props.dropFiles(files);
+        } }, { key: 'addTag', value: function addTag(
+
+        tag) {/* istanbul ignore next */cov_1ocxstmdb.f[4]++;
+            var tags = /* istanbul ignore next */(cov_1ocxstmdb.s[15]++, this.state.tags); /* istanbul ignore next */cov_1ocxstmdb.s[16]++;
+            tags.push(tag); /* istanbul ignore next */cov_1ocxstmdb.s[17]++;
+            this.setState({ tags: tags });
+        } }, { key: 'deleteTag', value: function deleteTag(
+
+        key) {/* istanbul ignore next */cov_1ocxstmdb.f[5]++;
+            var tags = /* istanbul ignore next */(cov_1ocxstmdb.s[18]++, this.state.tags);
+            var tagToDelete = /* istanbul ignore next */(cov_1ocxstmdb.s[19]++, tags.map(function (tag) {/* istanbul ignore next */cov_1ocxstmdb.f[6]++;cov_1ocxstmdb.s[20]++;return tag.key;}).indexOf(key)); /* istanbul ignore next */cov_1ocxstmdb.s[21]++;
+            tags.splice(tagToDelete, 1); /* istanbul ignore next */cov_1ocxstmdb.s[22]++;
+            this.setState({ tags: tags });
+        } }, { key: 'changeTag', value: function changeTag(
+
+        value) {/* istanbul ignore next */cov_1ocxstmdb.f[7]++;cov_1ocxstmdb.s[23]++;
+            this.setState({ tag: value });
+        } }, { key: 'uploadFiles', value: function uploadFiles()
+
+        {/* istanbul ignore next */cov_1ocxstmdb.f[8]++;cov_1ocxstmdb.s[24]++;
+            this.props.storeDocuments(this.state.files, this.state.tags);
+        } }, { key: 'componentWillUpdate', value: function componentWillUpdate(
+
+        nextProps, nextState) {/* istanbul ignore next */cov_1ocxstmdb.f[9]++;cov_1ocxstmdb.s[25]++;
+            if ( /* istanbul ignore next */(cov_1ocxstmdb.b[2][0]++, nextProps.uploading === false) && /* istanbul ignore next */(cov_1ocxstmdb.b[2][1]++, nextProps.error === false) && /* istanbul ignore next */(cov_1ocxstmdb.b[2][2]++, this.props.uploading === true)) {/* istanbul ignore next */cov_1ocxstmdb.b[1][0]++;cov_1ocxstmdb.s[26]++;
+                this.setState(this.getInitialState());
+            } else /* istanbul ignore next */{cov_1ocxstmdb.b[1][1]++;}
+        } }]);return DropZone;}( /* istanbul ignore next */_react2.default.Component); /* istanbul ignore next */cov_1ocxstmdb.s[27]++;
+
+
+DropZone.propTypes = {
+    storeDocuments: /* istanbul ignore next */_propTypes2.default.func.isRequired };
+
+
+var styles = /* istanbul ignore next */(cov_1ocxstmdb.s[28]++, {
+    button: {
+        marginTop: 12 },
+
+    card: {
+        color: "red" } }); /* istanbul ignore next */cov_1ocxstmdb.s[29]++;
+
+
+
+DropZone = /* istanbul ignore next */(0, _radium2.default)(DropZone); /* istanbul ignore next */cov_1ocxstmdb.s[30]++;
+
+var mapStateToProps = function mapStateToProps(state) {/* istanbul ignore next */cov_1ocxstmdb.f[10]++;cov_1ocxstmdb.s[31]++;
+    return {
+        uploading: state.uploading,
+        error: state.upload_error.error,
+        errorMessage: state.upload_error.errorMessage };
+
+}; /* istanbul ignore next */cov_1ocxstmdb.s[32]++;
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {/* istanbul ignore next */cov_1ocxstmdb.f[11]++;cov_1ocxstmdb.s[33]++;
+    return {
+        storeDocuments: function /* istanbul ignore next */storeDocuments(files, tags) {/* istanbul ignore next */cov_1ocxstmdb.f[12]++;cov_1ocxstmdb.s[34]++;
+            dispatch( /* istanbul ignore next */(0, _actions.storeDocuments)(files, tags));
+        },
+        dropFiles: function /* istanbul ignore next */dropFiles(files) {/* istanbul ignore next */cov_1ocxstmdb.f[13]++;cov_1ocxstmdb.s[35]++;
+            for (var i = 0; i < files.length; i++) {/* istanbul ignore next */cov_1ocxstmdb.s[36]++;
+                dispatch( /* istanbul ignore next */(0, _actions.fileDropped)(files[i]));
+            }
+        } };
+
+}; /* istanbul ignore next */cov_1ocxstmdb.s[37]++;
+
+DropZone = /* istanbul ignore next */(0, _reactRedux.connect)(
+mapStateToProps,
+mapDispatchToProps)(
+DropZone); /* istanbul ignore next */exports.default =
+
+DropZone;

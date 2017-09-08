@@ -1,0 +1,14 @@
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.upload_error = undefined;var _actions = require("../actions");
+
+var upload_error = exports.upload_error = function upload_error() {var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { error: false, errorMessage: "" };var action = arguments[1];
+    switch (action.type) {
+        case _actions.FILE_START_UPLOAD:
+            return { error: false, errorMessage: "" };
+        case _actions.DOCUMENTS_STORED:
+            return { error: false, errorMessage: "" };
+        case _actions.DOCUMENTS_NOT_STORED:
+            return { error: true, errorMessage: "FileUpload: Could not upload files. Try again" };
+        default:
+            return state;}
+
+};

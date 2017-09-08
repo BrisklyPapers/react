@@ -1,0 +1,26 @@
+'use strict';var _search = require('../../src/actions/search.js');
+
+
+
+
+describe('actions/searchInputKeyPressed', function () {
+    it('test string given', function () {
+        expect(
+        (0, _search.searchInputKeyPressed)("test")).
+        toEqual({
+            type: _search.SEARCH_INPUT_KEY_PRESSED,
+            text: "test" });
+
+    });
+});
+
+describe('actions/searchDocuments', function () {
+    it('test string given', function () {
+        expect(
+        (0, _search.searchDocuments)("test")).
+        toEqual({
+            type: _search.SEARCH_DOCUMENTS,
+            text: "test" });
+
+    });
+});

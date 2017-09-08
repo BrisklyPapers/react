@@ -1,0 +1,30 @@
+/* istanbul ignore next */'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.searchResults = undefined;var cov_193z4iavgg = function () {var path = '/home/node/webapp/src/reducers/searchResults.js',hash = '84e7eb46a322533f6a312156bd9d165f4038c321',global = new Function('return this')(),gcv = '__coverage__',coverageData = { path: '/home/node/webapp/src/reducers/searchResults.js', statementMap: { '0': { start: { line: 3, column: 29 }, end: { line: 30, column: 1 } }, '1': { start: { line: 4, column: 4 }, end: { line: 29, column: 5 } }, '2': { start: { line: 6, column: 12 }, end: { line: 8, column: 15 } }, '3': { start: { line: 10, column: 12 }, end: { line: 13, column: 15 } }, '4': { start: { line: 15, column: 12 }, end: { line: 20, column: 15 } }, '5': { start: { line: 22, column: 12 }, end: { line: 26, column: 15 } }, '6': { start: { line: 28, column: 12 }, end: { line: 28, column: 25 } } }, fnMap: { '0': { name: '(anonymous_0)', decl: { start: { line: 3, column: 29 }, end: { line: 3, column: 30 } }, loc: { start: { line: 3, column: 107 }, end: { line: 30, column: 1 } }, line: 3 } }, branchMap: { '0': { loc: { start: { line: 3, column: 30 }, end: { line: 3, column: 94 } }, type: 'default-arg', locations: [{ start: { line: 3, column: 38 }, end: { line: 3, column: 94 } }], line: 3 }, '1': { loc: { start: { line: 4, column: 4 }, end: { line: 29, column: 5 } }, type: 'switch', locations: [{ start: { line: 5, column: 8 }, end: { line: 8, column: 15 } }, { start: { line: 9, column: 8 }, end: { line: 13, column: 15 } }, { start: { line: 14, column: 8 }, end: { line: 20, column: 15 } }, { start: { line: 21, column: 8 }, end: { line: 26, column: 15 } }, { start: { line: 27, column: 8 }, end: { line: 28, column: 25 } }], line: 4 } }, s: { '0': 0, '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0 }, f: { '0': 0 }, b: { '0': [0], '1': [0, 0, 0, 0, 0] }, _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c' },coverage = global[gcv] || (global[gcv] = {});if (coverage[path] && coverage[path].hash === hash) {return coverage[path];}coverageData.hash = hash;return coverage[path] = coverageData;}();var /* istanbul ignore next */_actions = require('../actions');
+
+var searchResults = /* istanbul ignore next */exports.searchResults = (cov_193z4iavgg.s[0]++, function () {/* istanbul ignore next */var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : (cov_193z4iavgg.b[0][0]++, { isFetching: false, didInvalidate: false, documents: [] }); /* istanbul ignore next */var action = arguments[1]; /* istanbul ignore next */cov_193z4iavgg.f[0]++;cov_193z4iavgg.s[1]++;
+    switch (action.type) {
+        case /* istanbul ignore next */_actions.SEARCH_INPUT_KEY_PRESSED: /* istanbul ignore next */cov_193z4iavgg.b[1][0]++;cov_193z4iavgg.s[2]++;
+            return Object.assign({}, state, {
+                didInvalidate: true });
+
+        case /* istanbul ignore next */_actions.SEARCH_DOCUMENTS: /* istanbul ignore next */cov_193z4iavgg.b[1][1]++;cov_193z4iavgg.s[3]++;
+            return Object.assign({}, state, {
+                isFetching: true,
+                didInvalidate: false });
+
+        case /* istanbul ignore next */_actions.RECEIVE_DOCUMENTS: /* istanbul ignore next */cov_193z4iavgg.b[1][2]++;cov_193z4iavgg.s[4]++;
+            return Object.assign({}, state, {
+                isFetching: false,
+                didInvalidate: false,
+                documents: action.documents,
+                lastUpdated: action.receivedAt });
+
+        case /* istanbul ignore next */_actions.RECEIVE_DOCUMENTS_ERROR: /* istanbul ignore next */cov_193z4iavgg.b[1][3]++;cov_193z4iavgg.s[5]++;
+            return Object.assign({}, state, {
+                isFetching: false,
+                didInvalidate: false,
+                documents: [] });
+
+        default: /* istanbul ignore next */cov_193z4iavgg.b[1][4]++;cov_193z4iavgg.s[6]++;
+            return state;}
+
+});

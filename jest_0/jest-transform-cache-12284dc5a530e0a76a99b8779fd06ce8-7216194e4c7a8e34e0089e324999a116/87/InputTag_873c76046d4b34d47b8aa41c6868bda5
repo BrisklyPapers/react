@@ -1,0 +1,97 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _radium = require('radium');var _radium2 = _interopRequireDefault(_radium);
+var _Chip = require('material-ui/Chip');var _Chip2 = _interopRequireDefault(_Chip);
+var _TextField = require('material-ui/TextField');var _TextField2 = _interopRequireDefault(_TextField);
+var _propTypes = require('prop-types');var _propTypes2 = _interopRequireDefault(_propTypes);
+var _reactTapEventPlugin = require('react-tap-event-plugin');var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}
+
+(0, _reactTapEventPlugin2.default)();var
+
+InputTag = function (_React$Component) {_inherits(InputTag, _React$Component);
+
+    function InputTag(props) {_classCallCheck(this, InputTag);var _this = _possibleConstructorReturn(this, (InputTag.__proto__ || Object.getPrototypeOf(InputTag)).call(this,
+        props));
+        _this.state = {
+            count: 0 };
+
+
+        _this.handleRequestDelete = _this.handleRequestDelete.bind(_this);
+        _this.onInputChange = _this.onInputChange.bind(_this);
+        _this.onInputKeyPress = _this.onInputKeyPress.bind(_this);return _this;
+    }_createClass(InputTag, [{ key: 'render', value: function render()
+
+        {var _this2 = this;
+            return (
+                _react2.default.createElement('div', {
+                        style: styles.wrapper },
+
+                    this.props.tags.map(function (tag) {return (
+                            _react2.default.createElement(_Chip2.default, {
+                                    key: tag.key,
+                                    onRequestDelete: function onRequestDelete() {return _this2.handleRequestDelete(tag.key);},
+                                    style: styles.base },
+
+                                tag.label));}),
+
+
+                    _react2.default.createElement(_TextField2.default, {
+                        id: 'search',
+                        hintText: 'Enter tag, press Enter',
+                        value: this.props.tag,
+                        onChange: this.onInputChange.bind(this),
+                        onKeyPress: this.onInputKeyPress.bind(this),
+                        ref: function ref(input) {return _this2.inputElement = input;},
+                        style: styles.input })));
+
+
+
+        } }, { key: 'handleRequestDelete', value: function handleRequestDelete(
+
+        key) {
+            this.props.deleteTag(key);
+        } }, { key: 'onInputChange', value: function onInputChange(
+
+        e) {
+            this.props.changeTag(e.target.value);
+        } }, { key: 'onInputKeyPress', value: function onInputKeyPress(
+
+        e) {
+            if (e.key === 'Enter' && '' !== e.target.value) {
+                this.props.addTag({
+                    key: this.state.count + 1,
+                    label: e.target.value });
+
+                this.props.changeTag("");
+
+                this.setState({
+                    count: this.state.count + 1 });
+
+            }
+        } }]);return InputTag;}(_react2.default.Component);
+
+
+
+InputTag.propTypes = {
+    addTag: _propTypes2.default.func.isRequired,
+    deleteTag: _propTypes2.default.func.isRequired,
+    tags: _propTypes2.default.array.isRequired,
+    changeTag: _propTypes2.default.func.isRequired,
+    tag: _propTypes2.default.string.isRequired };
+
+
+var styles = {
+    base: {
+        margin: 4 },
+
+    wrapper: {
+        display: 'flex',
+        flexWrap: 'wrap' },
+
+    input: {
+        height: '42px' } };
+
+
+
+InputTag = (0, _radium2.default)(InputTag);exports.default =
+
+InputTag;

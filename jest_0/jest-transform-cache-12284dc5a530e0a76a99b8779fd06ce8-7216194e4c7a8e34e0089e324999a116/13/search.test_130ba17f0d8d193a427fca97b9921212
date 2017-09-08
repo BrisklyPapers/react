@@ -1,0 +1,66 @@
+'use strict';var _search = require('../../src/actions/search.js');
+
+
+
+
+
+var _reduxMockStore = require('redux-mock-store');var _reduxMockStore2 = _interopRequireDefault(_reduxMockStore);
+var _reduxThunk = require('redux-thunk');var _reduxThunk2 = _interopRequireDefault(_reduxThunk);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var middlewares = [_reduxThunk2.default];
+var mockStore = (0, _reduxMockStore2.default)(middlewares);
+
+var mockResponse = function mockResponse(status, statusText, response) {
+    return new window.Response(response, {
+        status: status,
+        statusText: statusText,
+        headers: {
+            'Content-type': 'application/json' } });
+
+
+};
+
+describe('actions/searchInputKeyPressed', function () {
+    it('returns the given input', function () {
+        expect(
+        (0, _search.searchInputKeyPressed)("test")).
+        toEqual({
+            type: _search.SEARCH_INPUT_KEY_PRESSED,
+            text: "test" });
+
+    });
+});
+
+describe('actions/searchDocuments', function () {
+    it('returns the given test string', function () {
+        expect(
+        (0, _search.searchDocuments)("test")).
+        toEqual({
+            type: _search.SEARCH_DOCUMENTS,
+            text: "test" });
+
+    });
+});
+
+describe('actions/fetchDocuments', function () {
+    it('returns date and a valid response', function () {
+        window.fetch = jest.fn().mockImplementation(function () {return (
+                Promise.resolve(mockResponse(200, null, '[\
+                {fileName: "foo.pdf", url: "http://", text: "foo", tags: []}\
+            ]')));});
+
+
+        return store.dispatch((0, _search.fetchDocuments)("foo")).
+        then(function () {
+
+        });
+
+        expect(
+        (0, _search.fetchDocuments)("")).
+        toEqual({
+            type: _search.RECEIVE_DOCUMENTS,
+            documents: [],
+            receivedAt: Date.now() });
+
+    });
+});

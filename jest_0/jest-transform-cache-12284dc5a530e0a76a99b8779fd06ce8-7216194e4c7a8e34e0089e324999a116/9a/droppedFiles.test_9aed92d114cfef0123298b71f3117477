@@ -1,0 +1,59 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _actions = require('../../src/actions');
+var _droppedFiles = require('../../src/reducers/droppedFiles');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('reducers/droppedFiles', function () {
+    it('returns an an empty object as default', function () {
+        expect(
+        (0, _droppedFiles.droppedFiles)(undefined, { type: "" })).
+        toEqual(
+        {});
+
+    });
+    it('returns an an empty object if files where stored', function () {
+        expect(
+        (0, _droppedFiles.droppedFiles)({ test: test }, { type: _actions.DOCUMENTS_STORED })).
+        toEqual(
+        {});
+
+    });
+    it('returns an an empty object if files where not stored', function () {
+        expect(
+        (0, _droppedFiles.droppedFiles)({ test: test }, { type: _actions.DOCUMENTS_NOT_STORED })).
+        toEqual(
+        {});
+
+    });
+    it('adds dropped file to empty state', function () {
+        var document = {
+            name: "foo.pdf",
+            size: 17,
+            lastModified: 52376457234,
+            type: "pdf" };
+
+        expect(
+        (0, _droppedFiles.droppedFiles)({}, { type: _actions.FILE_DROP, document: document })).
+        toEqual(
+        [document]);
+
+    });
+    it('adds dropped file to state with existing files', function () {
+        var document = {
+            name: "foo.pdf",
+            size: 17,
+            lastModified: 52376457234,
+            type: "pdf" };
+
+        var document2 = {
+            name: "foo2.pdf",
+            size: 17,
+            lastModified: 52376457234,
+            type: "pdf" };
+
+        expect(
+        (0, _droppedFiles.droppedFiles)([document], { type: _actions.FILE_DROP, document2: document2 })).
+        toEqual(
+        [document, document2]);
+
+    });
+});

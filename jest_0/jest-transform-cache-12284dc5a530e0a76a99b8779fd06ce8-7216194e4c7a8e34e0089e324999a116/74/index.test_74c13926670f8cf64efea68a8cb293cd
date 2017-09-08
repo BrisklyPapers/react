@@ -1,0 +1,14 @@
+'use strict';
+var _index = require('../src/index.js');var _index2 = _interopRequireDefault(_index);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('index.js', function () {
+    it('renders without crashing', function () {
+        var shallowRenderer = ReactTestUtils.createRenderer();
+        var result = shallowRenderer.render(React.createElement(_index2.default, null));
+
+
+        expect(JSON.stringify(
+        Object.assign({}, _index2.default, { _reactInternalInstance: 'censored' }))).
+        toMatchSnapshot();
+    });
+}); // index.test.js

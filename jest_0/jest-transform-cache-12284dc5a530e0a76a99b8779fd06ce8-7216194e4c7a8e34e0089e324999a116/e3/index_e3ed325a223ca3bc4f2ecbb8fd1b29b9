@@ -1,0 +1,19 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _redux = require('redux');Object.defineProperty(exports, 'combineReducers', { enumerable: true, get: function get() {return _redux.
+        combineReducers;} });var _searchedText = require('./searchedText');Object.defineProperty(exports, 'searchedText', { enumerable: true, get: function get() {return _searchedText.
+        searchedText;} });var _searchResults = require('./searchResults');Object.defineProperty(exports, 'searchResults', { enumerable: true, get: function get() {return _searchResults.
+        searchResults;} });var _droppedFiles = require('./droppedFiles');Object.defineProperty(exports, 'droppedFiles', { enumerable: true, get: function get() {return _droppedFiles.
+        droppedFiles;} });var _uploading = require('./uploading');Object.defineProperty(exports, 'uploading', { enumerable: true, get: function get() {return _uploading.
+        uploading;} });var _upload_error = require('./upload_error');Object.defineProperty(exports, 'upload_error', { enumerable: true, get: function get() {return _upload_error.
+        upload_error;} });var _navigation = require('./navigation');Object.defineProperty(exports, 'navigation', { enumerable: true, get: function get() {return _navigation.
+        navigation;} });
+
+var rootReducer = combineReducers({
+    searchedText: searchedText,
+    searchResults: searchResults,
+    droppedFiles: droppedFiles,
+    uploading: uploading,
+    upload_error: upload_error,
+    navigation: navigation });exports.default =
+
+
+rootReducer;

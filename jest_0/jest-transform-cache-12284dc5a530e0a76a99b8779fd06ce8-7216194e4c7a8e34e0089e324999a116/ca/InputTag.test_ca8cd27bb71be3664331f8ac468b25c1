@@ -1,0 +1,105 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _reactTapEventPlugin = require('react-tap-event-plugin');var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
+
+var _InputTag = require('../../src/components/InputTag.js');var _InputTag2 = _interopRequireDefault(_InputTag);
+var _reactTestRenderer = require('react-test-renderer');var _reactTestRenderer2 = _interopRequireDefault(_reactTestRenderer);
+var _enzyme = require('enzyme');
+var _sinon = require('sinon');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}(0, _reactTapEventPlugin2.default)();
+
+describe('components/InputTag', function () {
+    it('should render correctly', function () {
+        var inputTag = _reactTestRenderer2.default.create(
+        _react2.default.createElement(_InputTag2.default, {
+            addTag: function addTag() {},
+            deleteTag: function deleteTag() {},
+            changeTag: function changeTag() {},
+            tags: [],
+            tag: '' }));
+
+
+        expect(inputTag.toJSON()).toMatchSnapshot();
+    });
+
+    it('should display chips for given tags', function () {
+        var wrapper = (0, _enzyme.shallow)(
+        _react2.default.createElement(_InputTag2.default, {
+            addTag: function addTag() {},
+            deleteTag: function deleteTag() {},
+            changeTag: function changeTag() {},
+            tags: [{ key: "t1", label: "test" }, { key: "t2", label: "react" }],
+            tag: '' }));
+
+
+        expect(wrapper.find('Chip')).toHaveLength(2);
+        expect(wrapper.find('Chip').first().prop("children")).toEqual("test");
+    });
+
+    it('should call deleteTag method when Chip is deleted', function () /*done*/{
+        //    const deleteTag = spy();
+        //    const wrapper = mount(
+        //            <InputTag
+        //                addTag={() => {}}
+        //                deleteTag={deleteTag}
+        //                changeTag={() => {}}
+        //                tags={[{key: "t1", label: "test"}]}
+        //                tag=""
+        //            />
+        //    );
+        //    expect(wrapper.find('Chip')).toHaveLength(1);
+        //    expect(wrapper.find('Chip').first().find('svg')).toHaveLength(1);
+        //
+        //    spy(wrapper.instance(), 'handleRequestDelete');
+        //    wrapper.find('Chip').first().find('svg').simulate('click');
+        //
+        //    expect.assertions(3);
+        //    setTimeout(() => {
+        //        expect(wrapper.instance().handleRequestDelete.callCount).toEqual(1);
+        //        expect(deleteTag.callCount).toEqual(1);
+        //        done();
+        //    }, 0);
+    });
+
+    it('should return input value on input change', function (done) {
+        var changeTagSpy = (0, _sinon.spy)();
+        var addTagSpy = (0, _sinon.spy)();
+        var wrapper = (0, _enzyme.mount)(
+        _react2.default.createElement(_InputTag2.default, {
+            addTag: addTagSpy,
+            deleteTag: function deleteTag() {},
+            changeTag: changeTagSpy,
+            tags: [],
+            tag: '' }));
+
+
+        expect(wrapper.find('TextField')).toHaveLength(1);
+        wrapper.find('TextField').first().find('input').simulate('keyPress', { key: 'f', target: { value: 'f' } });
+
+        expect.assertions(2);
+        setTimeout(function () {
+            expect(addTagSpy.callCount).toEqual(1);
+            expect(changeTagSpy.callCount).toEqual(1);
+            done();
+        }, 0);
+    });
+
+    it('should return clear input and create Chip if Return is pressed', function (done) {
+        var changeTag = (0, _sinon.spy)();
+        var wrapper = (0, _enzyme.mount)(
+        _react2.default.createElement(_InputTag2.default, {
+            addTag: function addTag() {},
+            deleteTag: function deleteTag() {},
+            changeTag: changeTag,
+            tags: [],
+            tag: '' }));
+
+
+        expect(wrapper.find('TextField')).toHaveLength(1);
+        wrapper.find('TextField').first().find('input').simulate('keyPress', { key: 'Enter', target: { value: 'f' } });
+
+        expect.assertions(2);
+        setTimeout(function () {
+            expect(changeTag.callCount).toEqual(1);
+            done();
+        }, 0);
+    });
+});

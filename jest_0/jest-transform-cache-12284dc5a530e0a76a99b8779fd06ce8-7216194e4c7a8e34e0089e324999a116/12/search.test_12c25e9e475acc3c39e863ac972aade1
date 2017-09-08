@@ -1,0 +1,63 @@
+'use strict';var _search = require('../../src/actions/search.js');
+
+
+
+
+
+var _reduxMockStore = require('redux-mock-store');var _reduxMockStore2 = _interopRequireDefault(_reduxMockStore);
+var _reduxThunk = require('redux-thunk');var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+var _fetchMock = require('fetch-mock');var _fetchMock2 = _interopRequireDefault(_fetchMock);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var middlewares = [_reduxThunk2.default];
+var mockStore = (0, _reduxMockStore2.default)(middlewares);
+
+describe('actions/searchInputKeyPressed', function () {
+    it('returns the given input', function () {
+        expect(
+        (0, _search.searchInputKeyPressed)("test")).
+        toEqual({
+            type: _search.SEARCH_INPUT_KEY_PRESSED,
+            text: "test" });
+
+    });
+});
+
+describe('actions/searchDocuments', function () {
+    it('returns the given test string', function () {
+        expect(
+        (0, _search.searchDocuments)("test")).
+        toEqual({
+            type: _search.SEARCH_DOCUMENTS,
+            text: "test" });
+
+    });
+});
+
+describe('actions/fetchDocuments', function () {
+    it('returns date and a valid response', function () {
+        var store = mockStore({});
+        var mockResult = {}; // [{fileName: "foo.pdf", url: "http://", text: "foo", tags: []}];
+
+        var myMock = _fetchMock2.default.mock('/ajax/document/search?q=foo', 200);
+
+        return store.dispatch((0, _search.fetchDocuments)("foo")).
+        then(function () {
+            expect(myMock.calls().matched.length).toBe(1);
+            expect(myMock.called('/ajax/document/search?q=foo')).toBe(true);
+
+            var expectedActions = store.getActions();
+            expect(expectedActions.length).toBe(2);
+            expect(expectedActions).toContainEqual({
+                type: _search.SEARCH_DOCUMENTS,
+                text: "foo" });
+
+            expect(expectedActions).toContainEqual({
+                type: _search.RECEIVE_DOCUMENTS,
+                documents: [
+                { fileName: "foo.pdf", url: "http://", text: "foo", tags: [] }],
+
+                receivedAt: Date.now() });
+
+        });
+    });
+});

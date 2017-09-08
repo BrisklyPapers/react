@@ -1,0 +1,85 @@
+'use strict';var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _Chip = require('material-ui/Chip');var _Chip2 = _interopRequireDefault(_Chip);
+var _MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
+var _reactTapEventPlugin = require('react-tap-event-plugin');var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
+
+
+var _enzyme = require('enzyme');
+var _sinon = require('sinon');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}(0, _reactTapEventPlugin2.default)();var
+
+Child = function (_React$Component) {_inherits(Child, _React$Component);
+    function Child(props) {_classCallCheck(this, Child);var _this = _possibleConstructorReturn(this, (Child.__proto__ || Object.getPrototypeOf(Child)).call(this,
+        props));
+        _this.onClick = _this.onClick.bind(_this);return _this;
+    }_createClass(Child, [{ key: 'render', value: function render()
+
+        {
+            return (
+                _react2.default.createElement('div', {
+                        onClick: this.onClick }, 'Child'));
+
+
+
+
+        } }, { key: 'onClick', value: function onClick(
+
+        e) {
+            this.props.onClick(e);
+        } }]);return Child;}(_react2.default.Component);var
+
+
+Parent = function (_React$Component2) {_inherits(Parent, _React$Component2);
+    function Parent(props) {_classCallCheck(this, Parent);var _this2 = _possibleConstructorReturn(this, (Parent.__proto__ || Object.getPrototypeOf(Parent)).call(this,
+        props));
+        _this2.onClick = _this2.onClick.bind(_this2);return _this2;
+    }_createClass(Parent, [{ key: 'render', value: function render()
+
+        {
+            return (
+                _react2.default.createElement(_MuiThemeProvider2.default, null,
+                    _react2.default.createElement('div', {
+                            id: 'smallChild',
+                            className: 'smallChild',
+                            onClick: this.onClick },
+
+                        _react2.default.createElement(Child, { onClick: this.onClick }),
+                        _react2.default.createElement(_Chip2.default, { key: 'myChip', onRequestDelete: this.onClick }, 'my Chip'))));
+
+
+
+        } }, { key: 'onClick', value: function onClick(
+
+        e) {
+            this.props.onClick(e);
+        } }]);return Parent;}(_react2.default.Component);
+
+
+describe('Parent tests', function () {
+    it('should call click', function (done) {
+        var onClickSpy = (0, _sinon.spy)();
+        var wrapper = (0, _enzyme.mount)(_react2.default.createElement(Parent, { onClick: onClickSpy }));
+
+        wrapper.simulate('click');
+
+        expect.assertions(1);
+        setTimeout(function () {
+            expect(onClickSpy.callCount).toEqual(1);
+            done();
+        }, 0);
+    });
+});
+
+describe('Child tests', function () {
+    it('should call click', function (done) {
+        var onClickSpy = (0, _sinon.spy)();
+        var wrapper = (0, _enzyme.mount)(_react2.default.createElement(Parent, { onClick: onClickSpy }));
+
+        wrapper.find('#smallChild').simulate('click');
+
+        expect.assertions(1);
+        setTimeout(function () {
+            expect(onClickSpy.callCount).toEqual(1);
+            done();
+        }, 0);
+    });
+});

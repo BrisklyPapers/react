@@ -1,0 +1,118 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _DropZone = require('../../src/containers/DropZone');var _DropZone2 = _interopRequireDefault(_DropZone);
+var _actions = require('../../src/actions');
+var _enzyme = require('enzyme');
+var _sinon = require('sinon');
+var _reduxMockStore = require('redux-mock-store');var _reduxMockStore2 = _interopRequireDefault(_reduxMockStore);
+var _reactTestRenderer = require('react-test-renderer');var _reactTestRenderer2 = _interopRequireDefault(_reactTestRenderer);
+var _shallow = require('react-test-renderer/shallow');var _shallow2 = _interopRequireDefault(_shallow);
+var _MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
+
+var _reactTapEventPlugin = require('react-tap-event-plugin');var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+(0, _reactTapEventPlugin2.default)();
+
+var mockStore = (0, _reduxMockStore2.default)();
+
+describe('containers/DropZone', function () {
+    var wrapper = void 0,store = void 0;
+
+    beforeEach(function () {
+        store = mockStore({ uploading: false, upload_error: { error: false, errorMessage: "" } });
+        store.dispatch = (0, _sinon.spy)();
+    });
+
+    describe('default rendering', function () {
+        it('renders correctly', function () {
+            var renderer = new _shallow2.default();
+            renderer.render(
+            _react2.default.createElement(_DropZone2.default, { store: store }));
+
+            expect(renderer.getRenderOutput()).toMatchSnapshot();
+        });
+
+        it('maps state and dispatch to props', function () {
+            wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_DropZone2.default, { store: store }));
+            expect(wrapper.props()).toEqual(expect.objectContaining({
+                uploading: expect.any(Boolean),
+                error: expect.any(Boolean),
+                errorMessage: expect.any(String),
+                storeDocuments: expect.any(Function),
+                dropFiles: expect.any(Function) }));
+
+        });
+    });
+
+    describe('rendering', function () {
+
+        beforeEach(function () {
+            wrapper = _reactTestRenderer2.default.create(
+            _react2.default.createElement(_MuiThemeProvider2.default, null,
+                _react2.default.createElement(_DropZone2.default, { store: store })));
+
+
+        });
+
+        it('should render all components', function () {
+            expect(wrapper.toJSON()).toMatchSnapshot();
+        });
+    });
+
+    describe('event handlers', function () {
+
+        beforeEach(function () {
+            // call shallow twice in order to call inner functions
+            // @see https://github.com/reactjs/redux/issues/1534
+            wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_DropZone2.default, { store: store })).shallow();
+        });
+
+        it('should buffer dropped files', function () {
+            var files = [{ file: 'test' }];
+
+            expect(wrapper.state().files).toEqual([]);
+            wrapper.instance().onDrop(files);
+            expect(wrapper.state().files).toEqual(files);
+
+            var expectedAction = { type: _actions.FILE_DROP, document: { file: 'test' } };
+            expect(store.dispatch.calledWithMatch(expectedAction)).toEqual(true);
+        });
+
+        var tagReact = { key: 1, label: "react" };
+        var tagRedux = { key: 2, label: "redux" };
+        var tagJest = { key: 3, label: "jest" };
+
+        it('should add tag to tags', function () {
+            expect(wrapper.state().tags).toEqual([]);
+            wrapper.instance().addTag(tagReact);
+            expect(wrapper.state().tags).toEqual([tagReact]);
+            wrapper.instance().addTag(tagRedux);
+            expect(wrapper.state().tags).toEqual([tagReact, tagRedux]);
+        });
+
+        it('should delete a tag by key', function () {
+            expect(wrapper.state().tags).toEqual([]);
+            wrapper.instance().addTag(tagReact);
+            wrapper.instance().addTag(tagRedux);
+            wrapper.instance().addTag(tagJest);
+            expect(wrapper.state().tags).toHaveLength(3);
+
+            wrapper.instance().deleteTag(2);
+            expect(wrapper.state().tags).toEqual([tagReact, tagJest]);
+
+            wrapper.instance().deleteTag(3);
+            expect(wrapper.state().tags).toEqual([tagReact]);
+
+            wrapper.instance().deleteTag(1);
+            expect(wrapper.state().tags).toEqual([]);
+        });
+
+        it('should not fail if tag to delete does not exist', function () {
+            wrapper.instance().deleteTag(1);
+            expect(wrapper.state().tags).toEqual([]);
+
+            wrapper.instance().addTag(tagReact);
+            expect(wrapper.state().tags).toEqual([tagReact]);
+            wrapper.instance().deleteTag(99);
+            expect(wrapper.state().tags).toEqual([tagReact]);
+        });
+    });
+});

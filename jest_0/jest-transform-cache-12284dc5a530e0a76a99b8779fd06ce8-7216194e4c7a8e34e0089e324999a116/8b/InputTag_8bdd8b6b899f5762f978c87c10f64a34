@@ -1,0 +1,97 @@
+/* istanbul ignore next */'use strict';Object.defineProperty(exports, "__esModule", { value: true });var cov_nnjx7ek67 = function () {var path = '/home/node/webapp/src/components/InputTag.js',hash = '915dc589a625e0c4825d6b70f97b0eaa2bcbb681',global = new Function('return this')(),gcv = '__coverage__',coverageData = { path: '/home/node/webapp/src/components/InputTag.js', statementMap: { '0': { start: { line: 11, column: 8 }, end: { line: 11, column: 21 } }, '1': { start: { line: 12, column: 8 }, end: { line: 14, column: 10 } }, '2': { start: { line: 16, column: 8 }, end: { line: 16, column: 71 } }, '3': { start: { line: 17, column: 8 }, end: { line: 17, column: 59 } }, '4': { start: { line: 18, column: 8 }, end: { line: 18, column: 63 } }, '5': { start: { line: 22, column: 8 }, end: { line: 47, column: 10 } }, '6': { start: { line: 28, column: 24 }, end: { line: 34, column: 31 } }, '7': { start: { line: 30, column: 51 }, end: { line: 30, column: 84 } }, '8': { start: { line: 42, column: 38 }, end: { line: 42, column: 63 } }, '9': { start: { line: 51, column: 8 }, end: { line: 51, column: 34 } }, '10': { start: { line: 55, column: 8 }, end: { line: 55, column: 45 } }, '11': { start: { line: 59, column: 8 }, end: { line: 69, column: 9 } }, '12': { start: { line: 60, column: 12 }, end: { line: 63, column: 15 } }, '13': { start: { line: 64, column: 12 }, end: { line: 64, column: 37 } }, '14': { start: { line: 66, column: 12 }, end: { line: 68, column: 15 } }, '15': { start: { line: 74, column: 0 }, end: { line: 80, column: 2 } }, '16': { start: { line: 82, column: 13 }, end: { line: 93, column: 1 } }, '17': { start: { line: 95, column: 0 }, end: { line: 95, column: 28 } } }, fnMap: { '0': { name: '(anonymous_0)', decl: { start: { line: 10, column: 4 }, end: { line: 10, column: 5 } }, loc: { start: { line: 10, column: 23 }, end: { line: 19, column: 5 } }, line: 10 }, '1': { name: '(anonymous_1)', decl: { start: { line: 21, column: 4 }, end: { line: 21, column: 5 } }, loc: { start: { line: 21, column: 13 }, end: { line: 48, column: 5 } }, line: 21 }, '2': { name: '(anonymous_2)', decl: { start: { line: 27, column: 41 }, end: { line: 27, column: 42 } }, loc: { start: { line: 28, column: 24 }, end: { line: 34, column: 31 } }, line: 28 }, '3': { name: '(anonymous_3)', decl: { start: { line: 30, column: 45 }, end: { line: 30, column: 46 } }, loc: { start: { line: 30, column: 51 }, end: { line: 30, column: 84 } }, line: 30 }, '4': { name: '(anonymous_4)', decl: { start: { line: 42, column: 29 }, end: { line: 42, column: 30 } }, loc: { start: { line: 42, column: 38 }, end: { line: 42, column: 63 } }, line: 42 }, '5': { name: '(anonymous_5)', decl: { start: { line: 50, column: 4 }, end: { line: 50, column: 5 } }, loc: { start: { line: 50, column: 29 }, end: { line: 52, column: 5 } }, line: 50 }, '6': { name: '(anonymous_6)', decl: { start: { line: 54, column: 4 }, end: { line: 54, column: 5 } }, loc: { start: { line: 54, column: 21 }, end: { line: 56, column: 5 } }, line: 54 }, '7': { name: '(anonymous_7)', decl: { start: { line: 58, column: 4 }, end: { line: 58, column: 5 } }, loc: { start: { line: 58, column: 23 }, end: { line: 70, column: 5 } }, line: 58 } }, branchMap: { '0': { loc: { start: { line: 59, column: 8 }, end: { line: 69, column: 9 } }, type: 'if', locations: [{ start: { line: 59, column: 8 }, end: { line: 69, column: 9 } }, { start: { line: 59, column: 8 }, end: { line: 69, column: 9 } }], line: 59 }, '1': { loc: { start: { line: 59, column: 12 }, end: { line: 59, column: 54 } }, type: 'binary-expr', locations: [{ start: { line: 59, column: 12 }, end: { line: 59, column: 29 } }, { start: { line: 59, column: 33 }, end: { line: 59, column: 54 } }], line: 59 } }, s: { '0': 0, '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 0, '9': 0, '10': 0, '11': 0, '12': 0, '13': 0, '14': 0, '15': 0, '16': 0, '17': 0 }, f: { '0': 0, '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0 }, b: { '0': [0, 0], '1': [0, 0] }, _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c' },coverage = global[gcv] || (global[gcv] = {});if (coverage[path] && coverage[path].hash === hash) {return coverage[path];}coverageData.hash = hash;return coverage[path] = coverageData;}();var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_radium = require('radium'); /* istanbul ignore next */var _radium2 = _interopRequireDefault(_radium);
+var /* istanbul ignore next */_Chip = require('material-ui/Chip'); /* istanbul ignore next */var _Chip2 = _interopRequireDefault(_Chip);
+var /* istanbul ignore next */_TextField = require('material-ui/TextField'); /* istanbul ignore next */var _TextField2 = _interopRequireDefault(_TextField);
+var /* istanbul ignore next */_propTypes = require('prop-types'); /* istanbul ignore next */var _propTypes2 = _interopRequireDefault(_propTypes);
+var /* istanbul ignore next */_MuiThemeProvider = require('material-ui/styles/MuiThemeProvider'); /* istanbul ignore next */var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var
+
+InputTag = function (_React$Component) {_inherits(InputTag, _React$Component);
+
+    function /* istanbul ignore next */InputTag(props) {/* istanbul ignore next */_classCallCheck(this, InputTag);cov_nnjx7ek67.f[0]++;cov_nnjx7ek67.s[0]++;var _this = _possibleConstructorReturn(this, (InputTag.__proto__ || Object.getPrototypeOf(InputTag)).call(this,
+        props)); /* istanbul ignore next */cov_nnjx7ek67.s[1]++;
+        /* istanbul ignore next */_this.state = {
+            count: 0 }; /* istanbul ignore next */cov_nnjx7ek67.s[2]++;
+
+
+        /* istanbul ignore next */_this.handleRequestDelete = /* istanbul ignore next */_this.handleRequestDelete.bind( /* istanbul ignore next */_this); /* istanbul ignore next */cov_nnjx7ek67.s[3]++;
+        /* istanbul ignore next */_this.onInputChange = /* istanbul ignore next */_this.onInputChange.bind( /* istanbul ignore next */_this); /* istanbul ignore next */cov_nnjx7ek67.s[4]++;
+        /* istanbul ignore next */_this.onInputKeyPress = /* istanbul ignore next */_this.onInputKeyPress.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
+    }_createClass(InputTag, [{ key: 'render', value: function render()
+
+        {/* istanbul ignore next */var _this2 = this;cov_nnjx7ek67.f[1]++;cov_nnjx7ek67.s[5]++;
+            return (
+                /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_MuiThemeProvider2.default, /* istanbul ignore next */null,
+                    /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'div', /* istanbul ignore next */{
+                            style: styles.wrapper },
+
+                        this.props.tags.map(function (tag)
+                        {/* istanbul ignore next */cov_nnjx7ek67.f[2]++;cov_nnjx7ek67.s[6]++;return (/* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_Chip2.default, /* istanbul ignore next */{
+                                        key: tag.key,
+                                        onRequestDelete: function /* istanbul ignore next */onRequestDelete() {/* istanbul ignore next */cov_nnjx7ek67.f[3]++;cov_nnjx7ek67.s[7]++;return (/* istanbul ignore next */_this2.handleRequestDelete(tag.key));},
+                                        style: styles.base },
+
+                                    tag.label));
+                        }),
+
+                        /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_TextField2.default, /* istanbul ignore next */{
+                            id: 'search',
+                            hintText: 'Enter tag, press Enter',
+                            value: this.props.tag,
+                            onChange: this.onInputChange,
+                            onKeyPress: this.onInputKeyPress,
+                            ref: function /* istanbul ignore next */ref(input) {/* istanbul ignore next */cov_nnjx7ek67.f[4]++;cov_nnjx7ek67.s[8]++;return (/* istanbul ignore next */_this2.inputElement = input);},
+                            style: styles.input }))));
+
+
+
+
+        } }, { key: 'handleRequestDelete', value: function handleRequestDelete(
+
+        key) {/* istanbul ignore next */cov_nnjx7ek67.f[5]++;cov_nnjx7ek67.s[9]++;
+            this.props.deleteTag(key);
+        } }, { key: 'onInputChange', value: function onInputChange(
+
+        e) {/* istanbul ignore next */cov_nnjx7ek67.f[6]++;cov_nnjx7ek67.s[10]++;
+            this.props.changeTag(e.target.value);
+        } }, { key: 'onInputKeyPress', value: function onInputKeyPress(
+
+        e) {/* istanbul ignore next */cov_nnjx7ek67.f[7]++;cov_nnjx7ek67.s[11]++;
+            if ( /* istanbul ignore next */(cov_nnjx7ek67.b[1][0]++, e.key === 'Enter') && /* istanbul ignore next */(cov_nnjx7ek67.b[1][1]++, '' !== e.target.value)) {/* istanbul ignore next */cov_nnjx7ek67.b[0][0]++;cov_nnjx7ek67.s[12]++;
+                this.props.addTag({
+                    key: this.state.count + 1,
+                    label: e.target.value }); /* istanbul ignore next */cov_nnjx7ek67.s[13]++;
+
+                this.props.changeTag(""); /* istanbul ignore next */cov_nnjx7ek67.s[14]++;
+
+                this.setState({
+                    count: this.state.count + 1 });
+
+            } else /* istanbul ignore next */{cov_nnjx7ek67.b[0][1]++;}
+        } }]);return InputTag;}( /* istanbul ignore next */_react2.default.Component); /* istanbul ignore next */cov_nnjx7ek67.s[15]++;
+
+
+
+InputTag.propTypes = {
+    addTag: /* istanbul ignore next */_propTypes2.default.func.isRequired,
+    deleteTag: /* istanbul ignore next */_propTypes2.default.func.isRequired,
+    tags: /* istanbul ignore next */_propTypes2.default.array.isRequired,
+    changeTag: /* istanbul ignore next */_propTypes2.default.func.isRequired,
+    tag: /* istanbul ignore next */_propTypes2.default.string.isRequired };
+
+
+var styles = /* istanbul ignore next */(cov_nnjx7ek67.s[16]++, {
+    base: {
+        margin: 4 },
+
+    wrapper: {
+        display: 'flex',
+        flexWrap: 'wrap' },
+
+    input: {
+        height: '42px' } }); /* istanbul ignore next */cov_nnjx7ek67.s[17]++;
+
+
+
+InputTag = /* istanbul ignore next */(0, _radium2.default)(InputTag); /* istanbul ignore next */exports.default =
+
+InputTag;

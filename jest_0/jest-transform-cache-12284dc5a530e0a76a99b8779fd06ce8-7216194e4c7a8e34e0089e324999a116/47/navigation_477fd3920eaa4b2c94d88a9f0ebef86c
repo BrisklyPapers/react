@@ -1,0 +1,13 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var PAGEVIEW_SEARCH_RESULTS = exports.PAGEVIEW_SEARCH_RESULTS = 'PAGEVIEW_SEARCH_RESULTS';
+var showResultPage = exports.showResultPage = function showResultPage() {
+    return {
+        type: PAGEVIEW_SEARCH_RESULTS };
+
+};
+
+var PAGEVIEW_FILE_UPLOAD = exports.PAGEVIEW_FILE_UPLOAD = 'PAGEVIEW_FILE_UPLOAD';
+var showFileUploadPage = exports.showFileUploadPage = function showFileUploadPage() {
+    return {
+        type: PAGEVIEW_FILE_UPLOAD };
+
+};

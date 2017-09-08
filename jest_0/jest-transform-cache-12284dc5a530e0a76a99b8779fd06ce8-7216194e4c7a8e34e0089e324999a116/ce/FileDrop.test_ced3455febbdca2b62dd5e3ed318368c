@@ -1,0 +1,163 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _FileDrop = require('../../src/components/FileDrop.js');var _FileDrop2 = _interopRequireDefault(_FileDrop);
+var _reactTestRenderer = require('react-test-renderer');var _reactTestRenderer2 = _interopRequireDefault(_reactTestRenderer);
+var _enzyme = require('enzyme');
+var _sinon = require('sinon');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('components/FileDrop', function () {
+    it('should render correctly', function () {
+        var fileDrop = _reactTestRenderer2.default.create(
+        _react2.default.createElement(_FileDrop2.default, { dropFiles: function dropFiles() {}, files: [] }));
+
+        expect(fileDrop.toJSON()).toMatchSnapshot();
+    });
+
+    it('should change style onDragOver and onDragEnd', function () {
+        var event = {
+            preventDefault: function preventDefault() {
+            } };
+
+
+        var fileDrop = _reactTestRenderer2.default.create(
+        _react2.default.createElement(_FileDrop2.default, { dropFiles: function dropFiles() {}, files: [] }));
+
+        var tree = fileDrop.toJSON();
+        expect(tree).toMatchSnapshot();
+
+        var divBox = tree.children[0];
+        expect(divBox.props.id).toEqual('fileDrop');
+
+        divBox.props.onDragOver(event);
+        expect(fileDrop.toJSON()).toMatchSnapshot();
+
+        divBox.props.onDragEnd(event);
+        expect(fileDrop.toJSON()).toMatchSnapshot();
+    });
+
+    it('should change style onDragOver and onDragLeave', function () {
+        var event = {
+            preventDefault: function preventDefault() {
+            } };
+
+
+        var fileDrop = _reactTestRenderer2.default.create(
+        _react2.default.createElement(_FileDrop2.default, { dropFiles: function dropFiles() {}, files: [] }));
+
+        var tree = fileDrop.toJSON();
+        expect(tree).toMatchSnapshot();
+
+        tree.children[0].props.onDragOver(event);
+        expect(fileDrop.toJSON()).toMatchSnapshot();
+
+        tree.children[0].props.onDragLeave(event);
+        expect(fileDrop.toJSON()).toMatchSnapshot();
+    });
+
+    it('should add and return dropped files', function () {
+        var event = {
+            preventDefault: function preventDefault() {
+            },
+            dataTransfer: {
+                files: [
+                { name: 'file1' },
+                { name: 'file2' }] } };
+
+
+
+
+        var files = [];
+        var dropFiles = function dropFiles(droppedFiles) {
+            files = droppedFiles;
+        };
+
+        var fileDrop = _reactTestRenderer2.default.create(
+        _react2.default.createElement(_FileDrop2.default, { dropFiles: dropFiles, files: files }));
+
+
+        var tree = fileDrop.toJSON();
+        tree.children[0].props.onDrop(event);
+        expect(fileDrop.toJSON()).toMatchSnapshot();
+
+        expect(files).toEqual([{ name: 'file1' }, { name: 'file2' }]);
+    });
+
+    it('should add and return dropped files if files are items', function () {
+        var event = {
+            preventDefault: function preventDefault() {
+            },
+            dataTransfer: {
+                items: [
+                { name: 'file1' },
+                { name: 'file2' }] } };
+
+
+
+
+        var files = [];
+        var dropFiles = function dropFiles(droppedFiles) {
+            files = droppedFiles;
+        };
+
+        var fileDrop = _reactTestRenderer2.default.create(
+        _react2.default.createElement(_FileDrop2.default, { dropFiles: dropFiles, files: files }));
+
+
+        var tree = fileDrop.toJSON();
+        tree.children[0].props.onDrop(event);
+        expect(fileDrop.toJSON()).toMatchSnapshot();
+
+        expect(files).toEqual([{ name: 'file1' }, { name: 'file2' }]);
+    });
+
+    it('should add and return dropped files if files are added by file input', function () {
+        var event = {
+            preventDefault: function preventDefault() {
+            },
+            target: {
+                files: [
+                { name: 'file1' },
+                { name: 'file2' }] } };
+
+
+
+
+        var files = [];
+        var dropFiles = function dropFiles(droppedFiles) {
+            files = droppedFiles;
+        };
+
+        var fileDrop = _reactTestRenderer2.default.create(
+        _react2.default.createElement(_FileDrop2.default, { dropFiles: dropFiles, files: files }));
+
+
+        var tree = fileDrop.toJSON();
+
+        var fileInput = tree.children[0].children[3];
+        expect(fileInput.props.type).toEqual('file');
+        expect(fileInput.props.name).toEqual('files[]');
+
+        fileInput.props.onChange(event);
+        expect(fileDrop.toJSON()).toMatchSnapshot();
+
+        expect(files).toEqual([{ name: 'file1' }, { name: 'file2' }]);
+    });
+
+    it('should display given files', function () {
+        var files = [{ name: 'file1' }, { name: 'file2' }];
+
+        var fileDrop = _reactTestRenderer2.default.create(
+        _react2.default.createElement(_FileDrop2.default, { dropFiles: function dropFiles() {}, files: files }));
+
+        expect(fileDrop.toJSON()).toMatchSnapshot();
+    });
+
+    it('should trigger click event on file input', function (done) {
+        var fileDrop = (0, _enzyme.mount)(_react2.default.createElement(_FileDrop2.default, { dropFiles: function dropFiles() {}, files: [] }));
+        var clickSpy = (0, _sinon.spy)(fileDrop.instance().inputElement, 'click');
+        fileDrop.find('#fileDrop').simulate('click');
+        setTimeout(function () {
+            expect(clickSpy.callCount).toEqual(1);
+            done();
+        }, 0);
+    });
+});

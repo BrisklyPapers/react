@@ -1,0 +1,27 @@
+'use strict';var _actions = require('../../src/actions');
+
+
+
+
+var _reduxMockStore = require('redux-mock-store');var _reduxMockStore2 = _interopRequireDefault(_reduxMockStore);
+var _reduxThunk = require('redux-thunk');var _reduxThunk2 = _interopRequireDefault(_reduxThunk);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('actions/showResultPage', function () {
+    it('returns PAGEVIEW_SEARCH_RESULTS', function () {
+        expect(
+        (0, _actions.showResultPage)()).
+        toEqual({
+            type: _actions.PAGEVIEW_SEARCH_RESULTS });
+
+    });
+});
+
+describe('actions/showFileUploadPage', function () {
+    it('returns PAGEVIEW_FILE_UPLOAD', function () {
+        expect(
+        (0, _actions.showFileUploadPage)()).
+        toEqual({
+            type: _actions.PAGEVIEW_FILE_UPLOAD });
+
+    });
+});

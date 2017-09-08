@@ -1,0 +1,62 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.DOCUMENTS_NOT_STORED = exports.DOCUMENTS_STORED = exports.storeDocuments = exports.fileStartUpload = exports.FILE_START_UPLOAD = exports.fileDropped = exports.FILE_DROP = undefined;var _jquery = require('jquery');var _jquery2 = _interopRequireDefault(_jquery);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var FILE_DROP = exports.FILE_DROP = 'FILE_DROP';
+var fileDropped = exports.fileDropped = function fileDropped(document) {
+    return {
+        type: FILE_DROP,
+        document: document };
+
+};
+
+var FILE_START_UPLOAD = exports.FILE_START_UPLOAD = 'FILE_START_UPLOAD';
+var fileStartUpload = exports.fileStartUpload = function fileStartUpload() {
+    return {
+        type: FILE_START_UPLOAD };
+
+};
+
+var storeDocuments = exports.storeDocuments = function storeDocuments(files, tags) {
+
+    return function (dispatch) {
+        var formData = new FormData();
+
+        _jquery2.default.each(files, function (i, file) {
+            formData.append('files[]', file);
+        });
+
+        _jquery2.default.each(tags, function (i, tag) {
+            formData.append("tags[" + tag.key + "]", tag.label);
+        });
+
+        formData.append('action', 'upload');
+
+        dispatch(fileStartUpload());
+
+        return fetch('/ajax/document', {
+            method: "POST",
+            body: formData }).
+
+        then(function (response) {return response.json();}).
+        then(function (json) {return dispatch(documentsStored(json));}).
+        catch(function (error) {return documentsNotStored(error);});
+    };
+};
+
+var DOCUMENTS_STORED = exports.DOCUMENTS_STORED = 'DOCUMENTS_STORED';
+var documentsStored = function documentsStored(json) {
+    return {
+        type: DOCUMENTS_STORED,
+        documents: json.map ? json : [],
+        receivedAt: Date.now() };
+
+};
+
+var DOCUMENTS_NOT_STORED = exports.DOCUMENTS_NOT_STORED = 'DOCUMENTS_NOT_STORED';
+var documentsNotStored = function documentsNotStored(error) {
+    return {
+        type: DOCUMENTS_NOT_STORED,
+        documents: [],
+        receivedAt: Date.now(),
+        error: error };
+
+};

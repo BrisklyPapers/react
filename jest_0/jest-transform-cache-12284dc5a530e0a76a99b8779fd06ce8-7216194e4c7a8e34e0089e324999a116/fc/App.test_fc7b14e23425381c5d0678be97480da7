@@ -1,0 +1,23 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _App = require('../../src/components/App.js');var _App2 = _interopRequireDefault(_App);
+
+var _MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
+var _reactRedux = require('react-redux');
+var _fetchMock = require('fetch-mock');var _fetchMock2 = _interopRequireDefault(_fetchMock);
+var _reduxMockStore = require('redux-mock-store');var _reduxMockStore2 = _interopRequireDefault(_reduxMockStore);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var ReactShallowRenderer = require('react-test-renderer/shallow');
+
+var mockStore = (0, _reduxMockStore2.default)();
+var renderer = new ReactShallowRenderer();
+
+describe('components/App', function () {
+    it('renders correctly', function () {
+        var app = renderer.render(
+        _react2.default.createElement(_MuiThemeProvider2.default, null,
+            _react2.default.createElement(_reactRedux.Provider, { store: mockStore({ searchedText: "" }) },
+                _react2.default.createElement(_App2.default, null))));
+
+
+
+        expect(app.getRenderOutput()).toMatchSnapshot();
+    });
+});

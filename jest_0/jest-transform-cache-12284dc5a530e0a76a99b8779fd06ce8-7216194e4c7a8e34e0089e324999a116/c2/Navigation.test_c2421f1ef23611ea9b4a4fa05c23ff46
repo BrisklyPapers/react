@@ -1,0 +1,43 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _Navigation = require('../../src/components/Navigation.js');var _Navigation2 = _interopRequireDefault(_Navigation);
+var _reactTestRenderer = require('react-test-renderer');var _reactTestRenderer2 = _interopRequireDefault(_reactTestRenderer);
+var _reduxMockStore = require('redux-mock-store');var _reduxMockStore2 = _interopRequireDefault(_reduxMockStore);
+var _MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
+var _reactRedux = require('react-redux');
+var _enzyme = require('enzyme');
+var _sinon = require('sinon');
+var _reactTapEventPlugin = require('react-tap-event-plugin');var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+(0, _reactTapEventPlugin2.default)();
+
+var mockStore = (0, _reduxMockStore2.default)();
+
+describe('components/Navigation', function () {
+    it('renders correctly', function () {
+        var navigation = _reactTestRenderer2.default.create(
+        _react2.default.createElement(_MuiThemeProvider2.default, null,
+            _react2.default.createElement(_reactRedux.Provider, { store: mockStore({ searchedText: "" }) },
+                _react2.default.createElement(_Navigation2.default, null))));
+
+
+
+        expect(navigation.toJSON()).toMatchSnapshot();
+    });
+
+    it('displays fileUploadPage on button click', function () {
+        var store = mockStore({ searchedText: "" });
+        var dispatchSpy = sinon.spy();
+        store.dispatch = dispatchSpy;
+
+        var wrapper = (0, _enzyme.mount)(
+        _react2.default.createElement(_MuiThemeProvider2.default, null,
+            _react2.default.createElement(_reactRedux.Provider, { store: mockStore({ searchedText: "" }) },
+                _react2.default.createElement(_Navigation2.default, null))));
+
+
+
+
+        expect(wrapper.find('#upload')).toHaveLength(1);
+        //wrapper.find('FlatButton').find('#upload').simulate('click');
+
+    });
+});

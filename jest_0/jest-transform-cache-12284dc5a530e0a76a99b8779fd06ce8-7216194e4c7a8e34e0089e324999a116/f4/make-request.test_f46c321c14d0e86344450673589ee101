@@ -1,0 +1,15 @@
+'use strict';var fetchMock = require('fetch-mock');
+var makeRequest = require('./make-request');
+
+it("mocks fetch", function () {
+    // Mock the fetch() global to always return the same value for GET
+    // requests to all URLs.
+    fetchMock.get('*', { hello: 'world' });
+
+    makeRequest().then(function (data) {
+        expect(fetchMock.calls().matched.length).toBe(1);
+    });
+
+    // Unmock.
+    fetchMock.restore();
+});

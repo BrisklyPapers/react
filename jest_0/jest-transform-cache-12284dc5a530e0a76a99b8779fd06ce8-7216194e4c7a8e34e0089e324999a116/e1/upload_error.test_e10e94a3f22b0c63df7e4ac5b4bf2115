@@ -1,0 +1,46 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _actions = require('../../src/actions');
+var _upload_error = require('../../src/reducers/upload_error');
+var _seamlessImmutable = require('seamless-immutable');var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('reducers/upload_error', function () {
+    it('should return no error as initial state', function () {
+        expect(
+        (0, _upload_error.upload_error)(undefined, { type: "" })).
+        toEqual(
+        { error: false, errorMessage: "" });
+
+    });
+
+    it('should clear error when upload is started', function () {
+        expect(
+        (0, _upload_error.upload_error)((0, _seamlessImmutable2.default)({ error: true }), { type: _actions.FILE_START_UPLOAD })).
+        toEqual(
+        { error: false, errorMessage: "" });
+
+    });
+
+    it('should clear error when documents where stored', function () {
+        expect(
+        (0, _upload_error.upload_error)((0, _seamlessImmutable2.default)({ error: true }), { type: _actions.DOCUMENTS_STORED })).
+        toEqual(
+        { error: false, errorMessage: "" });
+
+    });
+
+    it('should create an error when documents where not stored', function () {
+        expect(
+        (0, _upload_error.upload_error)((0, _seamlessImmutable2.default)({ error: false }), { type: _actions.DOCUMENTS_NOT_STORED })).
+        toEqual(
+        { error: true, errorMessage: "FileUpload: Could not upload files. Try again" });
+
+    });
+
+    it('should not change state if action is unkown', function () {
+        expect(
+        (0, _upload_error.upload_error)((0, _seamlessImmutable2.default)({ error: false }), { type: "" })).
+        toEqual(
+        { error: false });
+
+    });
+});

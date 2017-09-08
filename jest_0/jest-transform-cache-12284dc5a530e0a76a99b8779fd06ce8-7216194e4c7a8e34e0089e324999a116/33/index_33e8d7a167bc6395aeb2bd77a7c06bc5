@@ -1,0 +1,18 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _redux = require('redux');
+var _searchedText = require('./searchedText');
+var _searchResults = require('./searchResults');
+var _droppedFiles = require('./droppedFiles');
+var _uploading = require('./uploading');
+var _upload_error = require('./upload_error');
+var _navigation = require('./navigation');
+
+var rootReducer = (0, _redux.combineReducers)({
+    searchedText: _searchedText.searchedText,
+    searchResults: _searchResults.searchResults,
+    droppedFiles: _droppedFiles.droppedFiles,
+    uploading: _uploading.uploading,
+    upload_error: _upload_error.upload_error,
+    navigation: _navigation.navigation });exports.default =
+
+
+rootReducer;

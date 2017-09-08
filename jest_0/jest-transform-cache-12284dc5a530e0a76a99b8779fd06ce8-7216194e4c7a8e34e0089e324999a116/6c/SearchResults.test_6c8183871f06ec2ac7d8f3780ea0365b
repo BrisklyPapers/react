@@ -1,0 +1,13 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _SearchResults = require('../../src/components/SearchResults.js');var _SearchResults2 = _interopRequireDefault(_SearchResults);
+var _reactTestRenderer = require('react-test-renderer');var _reactTestRenderer2 = _interopRequireDefault(_reactTestRenderer);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('components/SearchResults', function () {
+    it('renders correctly', function () {
+        var documents = [];
+        var searchResults = _reactTestRenderer2.default.create(
+        _react2.default.createElement(_SearchResults2.default, { documents: [] }));
+
+        expect(searchResults.toJSON()).toMatchSnapshot();
+    });
+});

@@ -1,0 +1,69 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _search = require('../../src/actions/search.js');
+var _searchResults = require('../../src/reducers/searchResults');
+var _seamlessImmutable = require('seamless-immutable');var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('reducers/searchResults SEARCH_INPUT_KEY_PRESSED', function () {
+    it('key pressed', function () {
+        expect(
+        (0, _searchResults.searchResults)((0, _seamlessImmutable2.default)({}), { type: _search.SEARCH_INPUT_KEY_PRESSED })).
+        toEqual({
+            didInvalidate: true });
+
+    });
+    it('invalidate', function () {
+        expect(
+        (0, _searchResults.searchResults)((0, _seamlessImmutable2.default)({ didInvalidate: false }), { type: _search.SEARCH_INPUT_KEY_PRESSED })).
+        toEqual({
+            didInvalidate: true });
+
+    });
+});
+
+describe('reducers/searchResults SEARCH_DOCUMENTS', function () {
+    it('trigger search', function () {
+        expect(
+        (0, _searchResults.searchResults)((0, _seamlessImmutable2.default)({}), { type: _search.SEARCH_DOCUMENTS })).
+        toEqual({
+            isFetching: true,
+            didInvalidate: false });
+
+    });
+});
+
+describe('reducers/searchResults RECEIVE_DOCUMENTS', function () {
+    it('received documents', function () {
+        expect(
+        (0, _searchResults.searchResults)((0, _seamlessImmutable2.default)({}), { type: _search.RECEIVE_DOCUMENTS, documents: [{ a: "bc" }], receivedAt: "now" })).
+        toEqual({
+            isFetching: false,
+            didInvalidate: false,
+            documents: [{ a: "bc" }],
+            lastUpdated: "now" });
+
+    });
+});
+
+describe('reducers/searchResults RECEIVE_DOCUMENTS_ERROR', function () {
+    it('should return received documents', function () {
+        expect(
+        (0, _searchResults.searchResults)((0, _seamlessImmutable2.default)({}), { type: _search.RECEIVE_DOCUMENTS_ERROR, documents: [{ a: "bc" }], receivedAt: "now" })).
+        toEqual({
+            isFetching: false,
+            didInvalidate: false,
+            documents: [] });
+
+    });
+});
+
+describe('reducers/searchResults RECEIVE_DOCUMENTS_ERROR', function () {
+    it('should return default state and handle an invalid action', function () {
+        expect(
+        (0, _searchResults.searchResults)(undefined, { type: "" })).
+        toEqual({
+            isFetching: false,
+            didInvalidate: false,
+            documents: [] });
+
+    });
+});

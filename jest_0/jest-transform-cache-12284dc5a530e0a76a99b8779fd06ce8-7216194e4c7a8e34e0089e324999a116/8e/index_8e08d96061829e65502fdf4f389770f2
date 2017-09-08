@@ -1,0 +1,39 @@
+'use strict';require('babel-polyfill');
+
+var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _reactTapEventPlugin = require('react-tap-event-plugin');var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
+var _reactDom = require('react-dom');
+var _reactRedux = require('react-redux');
+var _MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
+var _reduxThunk = require('redux-thunk');var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+var _reduxLogger = require('redux-logger');
+var _redux = require('redux');
+var _reducers = require('./reducers');var _reducers2 = _interopRequireDefault(_reducers);
+var _App = require('./components/App');var _App2 = _interopRequireDefault(_App);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+(0, _reactTapEventPlugin2.default)();
+
+var loggerMiddleware = (0, _reduxLogger.createLogger)();
+
+var composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || _redux.compose;
+
+/* eslint-disable no-underscore-dangle */
+var store = (0, _redux.createStore)(_reducers2.default,
+
+undefined,
+composeEnhancers((0, _redux.applyMiddleware)(_reduxThunk2.default,
+// lets us dispatch() functions
+loggerMiddleware // neat middleware that logs actions
+)));
+
+/* eslint-enable */
+
+(0, _reactDom.render)(
+_react2.default.createElement(_MuiThemeProvider2.default, null,
+    _react2.default.createElement(_reactRedux.Provider, { store: store },
+        _react2.default.createElement(_App2.default, null))),
+
+
+document.getElementById('root'));

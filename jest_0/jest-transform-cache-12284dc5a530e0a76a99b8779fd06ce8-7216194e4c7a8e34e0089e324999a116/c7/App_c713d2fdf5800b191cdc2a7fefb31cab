@@ -1,0 +1,20 @@
+/* istanbul ignore next */'use strict';Object.defineProperty(exports, "__esModule", { value: true });var cov_27a41qja2l = function () {var path = '/home/node/webapp/src/components/App.js',hash = 'be685aea2bfbaf6f95134ff6a2f4652f0521a06d',global = new Function('return this')(),gcv = '__coverage__',coverageData = { path: '/home/node/webapp/src/components/App.js', statementMap: { '0': { start: { line: 8, column: 12 }, end: { line: 18, column: 1 } }, '1': { start: { line: 9, column: 4 }, end: { line: 17, column: 10 } } }, fnMap: { '0': { name: '(anonymous_0)', decl: { start: { line: 8, column: 12 }, end: { line: 8, column: 13 } }, loc: { start: { line: 9, column: 4 }, end: { line: 17, column: 10 } }, line: 9 } }, branchMap: {}, s: { '0': 0, '1': 0 }, f: { '0': 0 }, b: {}, _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c' },coverage = global[gcv] || (global[gcv] = {});if (coverage[path] && coverage[path].hash === hash) {return coverage[path];}coverageData.hash = hash;return coverage[path] = coverageData;}();var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_Navigation = require('../components/Navigation'); /* istanbul ignore next */var _Navigation2 = _interopRequireDefault(_Navigation);
+var /* istanbul ignore next */_ResultPage = require('../containers/ResultPage'); /* istanbul ignore next */var _ResultPage2 = _interopRequireDefault(_ResultPage);
+var /* istanbul ignore next */_FileUploadPage = require('../containers/FileUploadPage'); /* istanbul ignore next */var _FileUploadPage2 = _interopRequireDefault(_FileUploadPage);
+var /* istanbul ignore next */_SearchResults = require('../containers/SearchResults'); /* istanbul ignore next */var _SearchResults2 = _interopRequireDefault(_SearchResults);
+var /* istanbul ignore next */_DropZone = require('../containers/DropZone'); /* istanbul ignore next */var _DropZone2 = _interopRequireDefault(_DropZone);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}cov_27a41qja2l.s[0]++;
+
+var App = function App()
+{/* istanbul ignore next */cov_27a41qja2l.f[0]++;cov_27a41qja2l.s[1]++;return (/* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */'div', /* istanbul ignore next */null,
+            /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_Navigation2.default, /* istanbul ignore next */null),
+            /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_ResultPage2.default, /* istanbul ignore next */null,
+                /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_SearchResults2.default, /* istanbul ignore next */null)),
+
+            /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_FileUploadPage2.default, /* istanbul ignore next */null,
+                /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_DropZone2.default, /* istanbul ignore next */null))));
+
+}; /* istanbul ignore next */exports.default =
+
+
+App;

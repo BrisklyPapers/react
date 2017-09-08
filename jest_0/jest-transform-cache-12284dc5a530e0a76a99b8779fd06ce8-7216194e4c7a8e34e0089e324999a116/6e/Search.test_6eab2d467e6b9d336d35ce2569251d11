@@ -1,0 +1,49 @@
+'use strict';
+
+
+
+
+
+
+
+jest.unmock('../../src/actions');var _react = require('react');var _react2 = _interopRequireDefault(_react);var _Search = require('../../src/containers/Search');var _Search2 = _interopRequireDefault(_Search);var _enzyme = require('enzyme');var _sinon = require('sinon');var _reduxMockStore = require('redux-mock-store');var _reduxMockStore2 = _interopRequireDefault(_reduxMockStore);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var mockStore = (0, _reduxMockStore2.default)();
+var actions = require('../../src/actions');
+
+actions.showResultPage = jest.fn();
+actions.searchInputKeyPressed = jest.fn();
+actions.fetchDocumentsIfNeeded = jest.fn();
+
+describe('containers/Search', function () {
+    var wrapper = void 0,store = void 0;
+
+    beforeEach(function () {
+        store = mockStore({ searchedText: "fun" });
+        store.dispatch = (0, _sinon.spy)();
+        wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_Search2.default, { store: store }));
+    });
+
+    it('maps state and dispatch to props', function () {
+        expect(wrapper.props()).toEqual(expect.objectContaining({
+            searchedText: "fun",
+            triggerSearch: expect.any(Function),
+            onFocus: expect.any(Function) }));
+
+    });
+
+    it('maps triggerSearch to dispatch search action', function () {
+        var event = { target: { value: "test" } };
+        wrapper.props().triggerSearch(event);
+
+        expect(store.dispatch.callCount).toEqual(2);
+        expect(showResultPage).toBeCalled();
+        //expect(fetchDocumentsIfNeeded).toBeCalled();
+    });
+
+    it('maps triggerSearch to dispatch search action', function () {
+        wrapper.props().onFocus();
+
+        expect(store.dispatch.callCount).toEqual(1);
+        //expect(fetchDocumentsIfNeeded).toBeCalled();
+    });
+
+});

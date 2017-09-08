@@ -1,0 +1,32 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _Search = require('../../src/components/Search.js');var _Search2 = _interopRequireDefault(_Search);
+var _reactTestRenderer = require('react-test-renderer');var _reactTestRenderer2 = _interopRequireDefault(_reactTestRenderer);
+var _enzyme = require('enzyme');
+var _sinon = require('sinon');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('components/Search', function () {
+    it('renders correctly', function () {
+        var search = _reactTestRenderer2.default.create(
+        _react2.default.createElement(_Search2.default, { searchedText: 'test', triggerSearch: function triggerSearch() {} }));
+
+        expect(search.toJSON()).toMatchSnapshot();
+    });
+
+    it('triggers search on change', function (done) {
+        var wrapper = (0, _enzyme.mount)(
+        _react2.default.createElement(_Search2.default, { searchedText: 'test', triggerSearch: callbackSpy }));
+
+
+        wrapper.find('TextField').first().find('input').simulate('change', { key: 'f', target: { value: 'f' } });
+
+        expect.assertions(1);
+        setTimeout(function () {
+            expect(callbackSpy.callCount).toEqual(1);
+            done();
+        }, 0);
+    });
+
+    it('triggers callback on focus', function () {
+
+    });
+});

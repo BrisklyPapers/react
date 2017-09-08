@@ -1,0 +1,24 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _Search = require('../../src/containers/Search');var _Search2 = _interopRequireDefault(_Search);
+var _enzyme = require('enzyme');
+var _reduxMockStore = require('redux-mock-store');var _reduxMockStore2 = _interopRequireDefault(_reduxMockStore);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+var mockStore = (0, _reduxMockStore2.default)();
+
+describe('containers/Search', function () {
+    var wrapper = void 0,store = void 0;
+
+    beforeEach(function () {
+        store = mockStore({ searchedText: "fun" });
+        store.dispatch = jest.fn();
+        wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_Search2.default, { store: store }));
+    });
+
+    it('maps state and dispatch to props', function () {
+        expect(wrapper.props()).toEqual(expect.objectContaining(_defineProperty({
+            searchedText: "fun",
+            triggerSearch: expect.any(Function) }, 'triggerSearch',
+        expect.any(Function))));
+
+    });
+});

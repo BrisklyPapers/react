@@ -1,0 +1,58 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _InputTag = require('../../src/components/InputTag.js');var _InputTag2 = _interopRequireDefault(_InputTag);
+var _reactTestRenderer = require('react-test-renderer');var _reactTestRenderer2 = _interopRequireDefault(_reactTestRenderer);
+var _MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
+var _enzyme = require('enzyme');
+var _sinon = require('sinon');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('components/InputTag', function () {
+    it('should render correctly', function () {
+        var inputTag = _reactTestRenderer2.default.create(
+        _react2.default.createElement(_MuiThemeProvider2.default, null,
+            _react2.default.createElement(_InputTag2.default, {
+                addTag: function addTag() {},
+                deleteTag: function deleteTag() {},
+                changeTag: function changeTag() {},
+                tags: [],
+                tag: '' })));
+
+
+
+        expect(inputTag.toJSON()).toMatchSnapshot();
+    });
+
+    it('should display chips for given tags', function () {
+        var wrapper = (0, _enzyme.shallow)(
+        _react2.default.createElement(_InputTag2.default, {
+            addTag: function addTag() {},
+            deleteTag: function deleteTag() {},
+            changeTag: function changeTag() {},
+            tags: [{ key: "t1", label: "test" }, { key: "t2", label: "react" }],
+            tag: '' }));
+
+
+        expect(wrapper.find('Chip')).toHaveLength(2);
+        expect(wrapper.find('Chip').first().prop("children")).toEqual("test");
+    });
+
+    it('should call onRquestDelete method', function () {
+        var deleteTag = (0, _sinon.spy)();
+        var wrapper = (0, _enzyme.mount)(
+        _react2.default.createElement(_MuiThemeProvider2.default, null,
+            _react2.default.createElement(_InputTag2.default, {
+                addTag: function addTag() {},
+                deleteTag: deleteTag,
+                changeTag: function changeTag() {},
+                tags: [{ key: "t1", label: "test" }],
+                tag: '' })));
+
+
+
+        expect(wrapper.find('Chip')).toHaveLength(1);
+        wrapper.find('Chip').first().simulate('click');
+        setTimeout(function () {
+            expect(deleteTag.callCount).toEqual(3);
+            done();
+        }, 0);
+    });
+});

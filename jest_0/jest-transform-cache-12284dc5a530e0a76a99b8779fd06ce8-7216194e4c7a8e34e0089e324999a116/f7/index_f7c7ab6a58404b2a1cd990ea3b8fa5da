@@ -1,0 +1,39 @@
+/* istanbul ignore next */'use strict';Object.defineProperty(exports, "__esModule", { value: true });var cov_6u4j7zt03 = function () {var path = '/home/node/webapp/src/index.js',hash = '150a672d09237c3bbcb7883b731b5a9097abee90',global = new Function('return this')(),gcv = '__coverage__',coverageData = { path: '/home/node/webapp/src/index.js', statementMap: { '0': { start: { line: 16, column: 0 }, end: { line: 16, column: 23 } }, '1': { start: { line: 18, column: 25 }, end: { line: 18, column: 39 } }, '2': { start: { line: 20, column: 25 }, end: { line: 20, column: 79 } }, '3': { start: { line: 23, column: 12 }, end: { line: 30, column: 1 } } }, fnMap: {}, branchMap: { '0': { loc: { start: { line: 20, column: 25 }, end: { line: 20, column: 79 } }, type: 'binary-expr', locations: [{ start: { line: 20, column: 25 }, end: { line: 20, column: 68 } }, { start: { line: 20, column: 72 }, end: { line: 20, column: 79 } }], line: 20 }, '1': { loc: { start: { line: 39, column: 4 }, end: { line: 39, column: 68 } }, type: 'binary-expr', locations: [{ start: { line: 39, column: 4 }, end: { line: 39, column: 35 } }, { start: { line: 39, column: 39 }, end: { line: 39, column: 68 } }], line: 39 } }, s: { '0': 0, '1': 0, '2': 0, '3': 0 }, f: {}, b: { '0': [0, 0], '1': [0, 0] }, _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c' },coverage = global[gcv] || (global[gcv] = {});if (coverage[path] && coverage[path].hash === hash) {return coverage[path];}coverageData.hash = hash;return coverage[path] = coverageData;}(); /* istanbul ignore next */require('babel-polyfill');
+
+var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_reactTapEventPlugin = require('react-tap-event-plugin'); /* istanbul ignore next */var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
+var /* istanbul ignore next */_reactDom = require('react-dom');
+var /* istanbul ignore next */_reactRedux = require('react-redux');
+var /* istanbul ignore next */_MuiThemeProvider = require('material-ui/styles/MuiThemeProvider'); /* istanbul ignore next */var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
+var /* istanbul ignore next */_reduxThunk = require('redux-thunk'); /* istanbul ignore next */var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+var /* istanbul ignore next */_reduxLogger = require('redux-logger');
+var /* istanbul ignore next */_redux = require('redux');
+var /* istanbul ignore next */_reducers = require('./reducers'); /* istanbul ignore next */var _reducers2 = _interopRequireDefault(_reducers);
+var /* istanbul ignore next */_App = require('./components/App'); /* istanbul ignore next */var _App2 = _interopRequireDefault(_App);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+cov_6u4j7zt03.s[0]++; /* istanbul ignore next */(0, _reactTapEventPlugin2.default)();
+
+var loggerMiddleware = /* istanbul ignore next */(cov_6u4j7zt03.s[1]++, /* istanbul ignore next */(0, _reduxLogger.createLogger)());
+
+var composeEnhancers = /* istanbul ignore next */(cov_6u4j7zt03.s[2]++, /* istanbul ignore next */(cov_6u4j7zt03.b[0][0]++, window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || /* istanbul ignore next */(cov_6u4j7zt03.b[0][1]++, _redux.compose));
+
+/* eslint-disable no-underscore-dangle */
+var store = /* istanbul ignore next */(cov_6u4j7zt03.s[3]++, /* istanbul ignore next */(0, _redux.createStore)( /* istanbul ignore next */_reducers2.default,
+
+undefined,
+composeEnhancers( /* istanbul ignore next */(0, _redux.applyMiddleware)( /* istanbul ignore next */_reduxThunk2.default,
+// lets us dispatch() functions
+loggerMiddleware // neat middleware that logs actions
+))));
+
+/* eslint-enable */ /* istanbul ignore next */exports.default =
+
+/* istanbul ignore next */(0, _reactDom.render)(
+/* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_MuiThemeProvider2.default, /* istanbul ignore next */null,
+    /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactRedux.Provider, /* istanbul ignore next */{ store: store },
+        /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_App2.default, /* istanbul ignore next */null))),
+
+
+/* istanbul ignore next */(cov_6u4j7zt03.b[1][0]++, document.getElementById('root')) || /* istanbul ignore next */(cov_6u4j7zt03.b[1][1]++, document.createElement('div')));

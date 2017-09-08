@@ -1,0 +1,20 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.droppedFiles = undefined;var _actions = require('../actions');
+
+var droppedFiles = exports.droppedFiles = function droppedFiles() {var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];var action = arguments[1];
+    switch (action.type) {
+        case _actions.FILE_DROP:
+            state.push({
+                name: action.document.name,
+                size: action.document.size,
+                lastModified: action.document.lastModified,
+                type: action.document.type });
+
+            return state;
+        case _actions.DOCUMENTS_STORED:
+            return [];
+        case _actions.DOCUMENTS_NOT_STORED:
+            return [];
+        default:
+            return state;}
+
+};

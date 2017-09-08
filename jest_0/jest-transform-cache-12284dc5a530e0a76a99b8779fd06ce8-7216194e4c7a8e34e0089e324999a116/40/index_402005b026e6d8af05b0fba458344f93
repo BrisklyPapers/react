@@ -1,0 +1,18 @@
+/* istanbul ignore next */'use strict';Object.defineProperty(exports, "__esModule", { value: true });var cov_1rs9tskpcf = function () {var path = '/home/node/webapp/src/reducers/index.js',hash = 'f407031acd3e02af25c744fd7271e67e8ab80c2f',global = new Function('return this')(),gcv = '__coverage__',coverageData = { path: '/home/node/webapp/src/reducers/index.js', statementMap: { '0': { start: { line: 9, column: 20 }, end: { line: 16, column: 2 } } }, fnMap: {}, branchMap: {}, s: { '0': 0 }, f: {}, b: {}, _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c' },coverage = global[gcv] || (global[gcv] = {});if (coverage[path] && coverage[path].hash === hash) {return coverage[path];}coverageData.hash = hash;return coverage[path] = coverageData;}();var /* istanbul ignore next */_redux = require('redux');
+var /* istanbul ignore next */_searchedText = require('./searchedText');
+var /* istanbul ignore next */_searchResults = require('./searchResults');
+var /* istanbul ignore next */_droppedFiles = require('./droppedFiles');
+var /* istanbul ignore next */_uploading = require('./uploading');
+var /* istanbul ignore next */_upload_error = require('./upload_error');
+var /* istanbul ignore next */_navigation = require('./navigation');
+
+var rootReducer = /* istanbul ignore next */(cov_1rs9tskpcf.s[0]++, /* istanbul ignore next */(0, _redux.combineReducers)({
+    searchedText: /* istanbul ignore next */_searchedText.searchedText,
+    searchResults: /* istanbul ignore next */_searchResults.searchResults,
+    droppedFiles: /* istanbul ignore next */_droppedFiles.droppedFiles,
+    uploading: /* istanbul ignore next */_uploading.uploading,
+    upload_error: /* istanbul ignore next */_upload_error.upload_error,
+    navigation: /* istanbul ignore next */_navigation.navigation })); /* istanbul ignore next */exports.default =
+
+
+rootReducer;

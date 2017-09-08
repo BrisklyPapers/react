@@ -1,0 +1,14 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.uploading = undefined;var _actions = require('../actions');
+
+var uploading = exports.uploading = function uploading() {var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;var action = arguments[1];
+    switch (action.type) {
+        case _actions.FILE_START_UPLOAD:
+            return true;
+        case _actions.DOCUMENTS_STORED:
+            return false;
+        case _actions.DOCUMENTS_NOT_STORED:
+            return false;
+        default:
+            return state;}
+
+};
