@@ -2,76 +2,59 @@ import React from 'react';
 import Search from '../containers/Search';
 import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/Toolbar';
 import FlatButton from 'material-ui/FlatButton';
-import PropTypes from 'prop-types';
-import Radium from 'radium';
+import { connect } from 'react-redux';
+import {showFileUploadPage} from '../actions';
 
 class Navigation extends React.Component {
     render () {
         return (
-            <div style={styles.div[this.props.cssStyle]}>
-                <Toolbar style={{backgroundColor: "transparent", marginLeft: "15vw"}}>
+            <div style={{marginBottom: "20px"}}>
+                <Toolbar style={{backgroundColor: "white"}}>
                     <ToolbarGroup firstChild={true}>
-                        {this.props.loggedIn &&
-                            <Search />
-                        }
-                        {this.props.loggedIn &&
-                            <FlatButton
-                                id="upload"
-                                label="Upload files"
-                                secondary={true}
-                                onClick={this.props.showFileUploadPage}
-                            />
-                        }
-                    </ToolbarGroup>
-                    {!this.props.loggedIn &&
-                    <ToolbarGroup lastChild={true}>
+                        <ToolbarTitle text="Briskly Papers"/>
+                        <Search />
                         <FlatButton
-                            id="signup"
-                            label="Sign Up"
+                            id="upload"
+                            label="Upload files"
                             secondary={true}
+                            onClick={this.props.showFileUploadPage}
                         />
+                    </ToolbarGroup>
+                    <ToolbarGroup lastChild={true}>
                         <FlatButton
                             id="login"
-                            label="Log In"
+                            label="Login"
                             secondary={true}
-                            onClick={this.props.login}
+                            disabled={true}
                         />
                     </ToolbarGroup>
-                    }
-                    {this.props.loggedIn &&
-                    <ToolbarGroup lastChild={true}>
-                        <FlatButton
-                            id="logout"
-                            label="Log Out"
-                            secondary={true}
-                            onClick={this.props.logout}
-                        />
-                    </ToolbarGroup>
-                    }
                 </Toolbar>
             </div>
         );
     }
-}
+};
 
 Navigation.propTypes = {
-    loggedIn: PropTypes.bool.isRequired,
-    cssStyle: PropTypes.string.isRequired,
-    login: PropTypes.func.isRequired,
-    logout: PropTypes.func.isRequired,
-    showFileUploadPage: PropTypes.func.isRequired
 };
 
-var styles = {
-    div: {
-        index: {
-            position: "absolute",
-            width: "100%"
+
+const mapStateToProps = (state) => {
+    return {
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        showFileUploadPage: () => {
+            dispatch(showFileUploadPage());
         },
-        login: {
-            marginBottom: "20px"
-        }
-    }
+    };
 };
 
-export default Radium(Navigation);
+Navigation = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Navigation);
+
+
+export default Navigation;

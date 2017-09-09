@@ -1,10 +1,3 @@
-export const PAGEVIEW_INDEX = 'PAGEVIEW_INDEX';
-export const showIndexPage = () => {
-    return {
-        type: PAGEVIEW_INDEX,
-    }
-};
-
 export const PAGEVIEW_SEARCH_RESULTS = 'PAGEVIEW_SEARCH_RESULTS';
 export const showResultPage = () => {
     return {
