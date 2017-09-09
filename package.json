@@ -45,6 +45,9 @@
     "verbose": false,
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
+    ],
+    "setupFiles": [
+      "./__test__/bootstrap.js"
     ]
   },
   "false": {}
