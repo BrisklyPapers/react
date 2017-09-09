@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/SearchResults contains some search results 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "marginLeft": "15vw",
+    }
+  }
+>
   <div
     data-radium={true}
   >
@@ -57,4 +63,12 @@ exports[`components/SearchResults contains some search results 1`] = `
 </div>
 `;
 
-exports[`components/SearchResults renders correctly 1`] = `<div />`;
+exports[`components/SearchResults renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "marginLeft": "15vw",
+    }
+  }
+/>
+`;

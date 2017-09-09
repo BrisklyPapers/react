@@ -5,6 +5,7 @@ import {droppedFiles} from './droppedFiles';
 import {uploading} from './uploading';
 import {upload_error} from './upload_error';
 import {navigation} from './navigation';
+import {logged_in} from './logged_in';
 
 export {combineReducers} from 'redux';
 export {searchedText} from './searchedText';
@@ -13,6 +14,7 @@ export {droppedFiles} from './droppedFiles';
 export {uploading} from './uploading';
 export {upload_error} from './upload_error';
 export {navigation} from './navigation';
+export {logged_in} from './logged_in';
 
 const rootReducer = combineReducers({
     searchedText,
@@ -20,7 +22,8 @@ const rootReducer = combineReducers({
     droppedFiles,
     uploading,
     upload_error,
-    navigation
+    navigation,
+    logged_in
 });
 
 export default rootReducer

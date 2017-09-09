@@ -20,3 +20,7 @@ The complete stack can be found at https://github.com/BrisklyPapers/webstack
 `docker-compose up -d`
 
 The interface is available at `http://localhost:3000/`
+
+## Credits
+
+Background Image: Photo by freddie marriage on Unsplash

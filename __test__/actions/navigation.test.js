@@ -1,10 +1,21 @@
 import {
     showResultPage, PAGEVIEW_SEARCH_RESULTS,
-    showFileUploadPage, PAGEVIEW_FILE_UPLOAD
+    showFileUploadPage, PAGEVIEW_FILE_UPLOAD,
+    showIndexPage, PAGEVIEW_INDEX
 } from '../../src/actions';
 
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
+
+describe('actions/showIndexPage', () => {
+    it('returns PAGEVIEW_INDEX', () => {
+        expect(
+            showIndexPage()
+        ).toEqual({
+            type: PAGEVIEW_INDEX
+        });
+    });
+});
 
 describe('actions/showResultPage', () => {
     it('returns PAGEVIEW_SEARCH_RESULTS', () => {
