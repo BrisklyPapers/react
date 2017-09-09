@@ -1,13 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/App renders correctly 1`] = `
-<div>
-  <Connect(Navigation) />
-  <Connect(PageView)>
-    <Connect(SearchResults) />
-  </Connect(PageView)>
-  <Connect(PageView)>
-    <Connect(DropZoneComponent) />
-  </Connect(PageView)>
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    style={
+      Object {
+        "backgroundImage": "url(\\"/home_background_1920cs.jpg\\")",
+        "backgroundPosition": "bottom center",
+        "backgroundRepeat": "no-repeat",
+        "backgroundSize": "cover",
+        "height": "100vh",
+        "position": "relative",
+      }
+    }
+  >
+    <Connect(Navigation) />
+    <IndexPageHead />
+    <Connect(PageView)>
+      <Connect(SearchResults) />
+    </Connect(PageView)>
+    <Connect(PageView)>
+      <Connect(DropZoneComponent) />
+    </Connect(PageView)>
+  </div>
+  <IndexPageDescription />
+</div>
+`;
+
+exports[`components/App renders correctly when logged in 1`] = `
+<div
+  data-radium={true}
+>
+  <div
+    data-radium={true}
+    style={
+      Object {
+        "backgroundImage": "url(\\"/login_background_1920x420.jpg\\")",
+        "backgroundPosition": "bottom center",
+        "backgroundRepeat": "repeat-y",
+        "backgroundSize": "100% 1px",
+        "height": "100%",
+        "minHeight": "100vh",
+        "position": "relative",
+      }
+    }
+  >
+    <Connect(Navigation) />
+    <IndexPageHead />
+    <Connect(PageView)>
+      <Connect(SearchResults) />
+    </Connect(PageView)>
+    <Connect(PageView)>
+      <Connect(DropZoneComponent) />
+    </Connect(PageView)>
+  </div>
+  <IndexPageDescription />
 </div>
 `;

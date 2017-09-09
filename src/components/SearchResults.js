@@ -6,7 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 const SearchResults = ({documents}) => {
     return (
         <MuiThemeProvider>
-            <div>
+            <div style={{marginLeft: "15vw"}}>
                 {documents.map(document => (
                     <SearchResult key={document.url} title={document.fileName} url={document.url} description={document.text.join()} />
                 ))}
