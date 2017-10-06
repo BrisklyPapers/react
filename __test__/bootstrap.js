@@ -2,6 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react-dom/test-utils';
 
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
+
+configure({ adapter: new Adapter() });
+
 window.clickMaterialUiFlatButton = (wrapper, id) => {
     // enzyme does not support touchTap currently
     // @see https://github.com/airbnb/enzyme/issues/99

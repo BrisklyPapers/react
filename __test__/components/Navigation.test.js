@@ -62,14 +62,14 @@ describe('components/Navigation', () => {
 
         it('should display certain elements', () => {
             expect(wrapper.find('Search')).toHaveLength(1);
-            expect(wrapper.find('FlatButton').find('#upload')).toHaveLength(1);
+            expect(wrapper.find('FlatButton').find('#upload')).toHaveLength(3);
             expect(wrapper.find('FlatButton').find('#sign up')).toHaveLength(0);
             expect(wrapper.find('FlatButton').find('#login')).toHaveLength(0);
-            expect(wrapper.find('FlatButton').find('#logout')).toHaveLength(1);
+            expect(wrapper.find('FlatButton').find('#logout')).toHaveLength(3);
         });
 
         it('should call showFileUploadPage on button click', (done) => {
-            expect(wrapper.find('FlatButton').find('#upload')).toHaveLength(1);
+            expect(wrapper.find('FlatButton').find('#upload')).toHaveLength(3);
 
             clickMaterialUiFlatButton(wrapper, 'upload');
 
@@ -81,7 +81,7 @@ describe('components/Navigation', () => {
         });
 
         it('should call logout on button click', (done) => {
-            expect(wrapper.find('FlatButton').find('#logout')).toHaveLength(1);
+            expect(wrapper.find('FlatButton').find('#logout')).toHaveLength(3);
 
             clickMaterialUiFlatButton(wrapper, 'logout');
 
@@ -120,13 +120,13 @@ describe('components/Navigation', () => {
         it('should display certain elements', () => {
             expect(wrapper.find('Search')).toHaveLength(0);
             expect(wrapper.find('FlatButton').find('#upload')).toHaveLength(0);
-            expect(wrapper.find('FlatButton').find('#signup')).toHaveLength(1);
-            expect(wrapper.find('FlatButton').find('#login')).toHaveLength(1);
+            expect(wrapper.find('FlatButton').find('#signup')).toHaveLength(3);
+            expect(wrapper.find('FlatButton').find('#login')).toHaveLength(3);
             expect(wrapper.find('FlatButton').find('#logout')).toHaveLength(0);
         });
 
         it('should call login on button click', (done) => {
-            expect(wrapper.find('FlatButton').find('#login')).toHaveLength(1);
+            expect(wrapper.find('FlatButton').find('#login')).toHaveLength(3);
 
             clickMaterialUiFlatButton(wrapper, 'login');
 
