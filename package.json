@@ -23,7 +23,7 @@
     "babel-preset-react": "^6.24.1",
     "code-point-at": "^1.1.0",
     "coveralls": "^3.0.0",
-    "enzyme": "^3.0.0",
+    "enzyme": "^3.4.3",
     "expect": "^21.1.0",
     "expect-jsx": "^4.0.0",
     "fetch-mock": "^5.12.2",
