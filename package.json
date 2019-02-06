@@ -7,7 +7,7 @@
     "enzyme-adapter-react-15": "^1.0.1",
     "material-ui": "^0.19.2",
     "radium": "^0.19.4",
-    "react": "^15.6.1",
+    "react": "^16.8.0",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.14",
