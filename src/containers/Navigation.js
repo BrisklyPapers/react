@@ -1,4 +1,3 @@
-import React from 'react';
 import NavigationComponent from '../components/Navigation';
 import { connect } from 'react-redux';
 import {showFileUploadPage, showIndexPage, showResultPage, login, logout} from '../actions';

@@ -8,7 +8,7 @@ class SearchResult extends React.Component {
         return (
             <div>
                 <Style scopeSelector="em" rules={{backgroundColor: 'yellow'}} />
-                <a title={this.props.title} href={this.props.url} target="_blank">{this.props.title}</a>
+                <a title={this.props.title} href={this.props.url} target="_blank" rel="noopener noreferrer">{this.props.title}</a>
                 <br/>
                 <div dangerouslySetInnerHTML={{__html: this.props.description}}/>
             </div>

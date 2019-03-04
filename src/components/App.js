@@ -1,6 +1,5 @@
 import React from 'react';
 import Navigation from '../containers/Navigation';
-import IndexPage from '../containers/IndexPage';
 import ResultPage from '../containers/ResultPage';
 import FileUploadPage from '../containers/FileUploadPage';
 import SearchResults from '../containers/SearchResults';
@@ -8,7 +7,6 @@ import DropZone from '../containers/DropZone';
 import IndexPageHead from './IndexPageHead';
 import IndexPageDescription from './IndexPageDescription';
 import Radium from 'radium';
-import {connect} from 'react-redux';
 
 class App extends React.Component {
     render() {
