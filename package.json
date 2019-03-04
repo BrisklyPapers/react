@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
     "enzyme-adapter-react-15": "^1.0.1",
     "material-ui": "^0.20.0",
     "radium": "^0.19.4",
