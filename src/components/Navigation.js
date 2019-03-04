@@ -1,6 +1,6 @@
 import React from 'react';
 import Search from '../containers/Search';
-import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/Toolbar';
+import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
 import FlatButton from 'material-ui/FlatButton';
 import PropTypes from 'prop-types';
 import Radium from 'radium';

@@ -13,6 +13,7 @@ exports[`components/SearchResult renders correctly 1`] = `
   />
   <a
     href="http://abc.de"
+    rel="noopener noreferrer"
     target="_blank"
     title="Foo"
   >

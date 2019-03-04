@@ -1,7 +1,6 @@
 import React from 'react';
 import IndexPage from '../containers/IndexPage';
 import Radium from 'radium';
-import {connect} from 'react-redux';
 
 class IndexPageHead extends React.Component {
     render() {

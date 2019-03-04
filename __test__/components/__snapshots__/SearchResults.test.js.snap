@@ -20,6 +20,7 @@ exports[`components/SearchResults contains some search results 1`] = `
     />
     <a
       href="http://briskly-papers.com"
+      rel="noopener noreferrer"
       target="_blank"
       title="bill.pdf"
     >
@@ -46,6 +47,7 @@ exports[`components/SearchResults contains some search results 1`] = `
     />
     <a
       href="https://localhost/search?q=flowers"
+      rel="noopener noreferrer"
       target="_blank"
       title="flower.jpg"
     >

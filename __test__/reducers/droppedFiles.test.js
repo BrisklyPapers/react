@@ -33,7 +33,7 @@ describe('reducers/droppedFiles', () => {
             type: "pdf"
         };
         expect(
-            droppedFiles(Immutable({}), {type: FILE_DROP, document})
+            droppedFiles(Immutable([]), {type: FILE_DROP, document})
         ).toEqual(
             [document]
         );
