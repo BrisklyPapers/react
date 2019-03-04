@@ -56,7 +56,7 @@ describe('components/InputTag', () => {
                 wrapper.instance(), 'svg'
             )
         );
-        ReactTestUtils.Simulate.touchTap(node);
+        ReactTestUtils.Simulate.click(node);
 
         expect.assertions(2);
         setTimeout(() => {
