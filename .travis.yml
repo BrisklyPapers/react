@@ -1,4 +1,5 @@
 language: node_js
 node_js:
-  - "8.4.0"
+  - "11.10.1"
 script: yarn install && yarn run test:coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
