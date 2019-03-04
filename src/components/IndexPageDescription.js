@@ -12,7 +12,7 @@ class IndexPageDescription extends React.Component {
                         Briskly Papers is a document management system. It's goal is to provide an easy and fast access to all your files.
                     </p>
                 </div>
-                <div style={styles.promotion}>
+                <div style={[styles.promotion, styles.right]}>
                     <h2 style={styles.h2}>Store your documents per Drag & Drop</h2>
                     <p style={styles.p}>
                         Select your file, move them to our Upload Area, click upload. Done
@@ -25,8 +25,9 @@ class IndexPageDescription extends React.Component {
                         click.
                     </p>
                 </div>
-                <div style={styles.promotion}>
+                <div style={[styles.promotion, styles.right]}>
                     <h2 style={styles.h2}>Save websites for offline usage</h2>
+                    <h3 style={styles.h3}>(coming soon)</h3>
                     <p style={styles.p}>
                         You want to remember a great website? Enter the URL, click save and find the information
                         whenever you need it. Even offline, with our PDF creator!
@@ -34,11 +35,12 @@ class IndexPageDescription extends React.Component {
                 </div>
                 <div style={styles.promotion}>
                     <h2 style={styles.h2}>Your documents are secure</h2>
+                    <h3 style={styles.h3}>(coming soon)</h3>
                     <p style={styles.p}>
                         All documents are stored encrypted. The files can only be decrypted with your password.
                     </p>
                 </div>
-                <div style={styles.promotion}>
+                <div style={[styles.promotion, styles.right]}>
                     <h2 style={styles.h2}>Full text search</h2>
                     <p style={styles.p}>
                         Each document can be parsed and indexed. You are able to find relevant documents by tag, file name or file content
@@ -57,6 +59,13 @@ var styles = {
         letterSpacing: "-1px",
         margin: 0
     },
+    h3: {
+        fontSize: "20px",
+        fontFamily: "HelveticaNeueW01-45Ligh,HelveticaNeueW02-45Ligh,HelveticaNeueW10-45Ligh,sans-serif",
+        fontWeight: 100,
+        letterSpacing: "-1px",
+        margin: 0
+    },
     p: {
         fontSize: "17px",
         fontFamily: "HelveticaNeueW01-45Ligh,HelveticaNeueW02-45Ligh,HelveticaNeueW10-45Ligh,sans-serif",
@@ -64,9 +73,14 @@ var styles = {
         margin: "2.6vh 0 6vh",
     },
     promotion: {
-        width: "40vw",
+        width: "60vw",
         color: "rgba(0, 0, 0, 0.4)",
         margin: "75px"
+    },
+    right: {
+        marginLeft: "auto",
+        marginRight: "75px",
+        textAlign: "right"
     }
 };
 

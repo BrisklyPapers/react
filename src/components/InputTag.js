@@ -81,7 +81,7 @@ InputTag.propTypes = {
 
 var styles = {
     base: {
-        margin: 4,
+        margin: 6,
     },
     wrapper: {
         display: 'flex',
