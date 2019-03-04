@@ -5,12 +5,12 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "enzyme-adapter-react-15": "^1.0.1",
-    "material-ui": "^0.19.2",
+    "material-ui": "^0.20.0",
     "radium": "^0.19.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
-    "react-scripts": "1.0.14",
+    "react-scripts": "1.0.15",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
@@ -24,15 +24,15 @@
     "code-point-at": "^1.1.0",
     "coveralls": "^3.0.0",
     "enzyme": "^3.0.0",
-    "expect": "^21.1.0",
+    "expect": "^22.0.0",
     "expect-jsx": "^5.0.0",
-    "fetch-mock": "^5.12.2",
+    "fetch-mock": "^6.0.0",
     "jest": "^21.1.0",
     "jest-cli": "^20.0.4",
     "react-test-renderer": "^15.6.1",
     "redux-mock-store": "^1.2.3",
     "seamless-immutable": "^7.1.2",
-    "sinon": "^4.0.0"
+    "sinon": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
