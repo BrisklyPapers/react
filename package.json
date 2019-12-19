@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "enzyme-adapter-react-15": "^1.0.1",
+    "enzyme-adapter-react-15": "^1.4.1",
     "material-ui": "^0.20.0",
     "radium": "^0.19.4",
     "react": "^15.6.1",
