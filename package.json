@@ -24,7 +24,7 @@
     "code-point-at": "^1.1.0",
     "coveralls": "^3.0.0",
     "enzyme": "^3.0.0",
-    "expect": "^22.0.0",
+    "expect": "^25.2.3",
     "expect-jsx": "^4.0.0",
     "fetch-mock": "^6.0.0",
     "jest": "^23.6.0",
